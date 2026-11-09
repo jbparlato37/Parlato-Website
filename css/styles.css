@@ -1086,20 +1086,10 @@ img[src*="banner-indy-downtown"] { object-position: center 17%; }
   align-items: flex-end;
   justify-content: flex-start;
   width: 100%;
-  background: linear-gradient(to top, rgba(13, 13, 13, 0.86) 0%, rgba(13, 13, 13, 0.55) 52%, rgba(13, 13, 13, 0.28) 100%);
+  background:
+    radial-gradient(ellipse 150% 110% at 34% 58%, rgba(13, 13, 13, 0.28) 0%, rgba(13, 13, 13, 0.1) 48%, rgba(13, 13, 13, 0) 74%),
+    linear-gradient(to top, rgba(13, 13, 13, 0.84) 0%, rgba(13, 13, 13, 0.7) 24%, rgba(13, 13, 13, 0.56) 50%, rgba(13, 13, 13, 0.44) 76%, rgba(13, 13, 13, 0.4) 100%);
   padding: 0 0 76px;
-}
-.hero-photo .hero-copy { position: relative; isolation: isolate; }
-.hero-photo .hero-copy::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: -8%;
-  right: -6%;
-  top: -14%;
-  bottom: -10%;
-  pointer-events: none;
-  background: linear-gradient(90deg, rgba(13, 13, 13, 0.62) 0%, rgba(13, 13, 13, 0.38) 64%, rgba(13, 13, 13, 0) 100%);
 }
 .hero-kicker {
   color: #fff;
