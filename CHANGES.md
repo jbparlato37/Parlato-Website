@@ -1,5 +1,23 @@
 # Parlato Real Estate website, version 3
 
+## November 9 update: pages, not one scroll
+
+The site is now separate pages. Navigation order is About, Services, Insights, Listings, Sold, Contact. Home is a short photo-led overview.
+
+- Call buttons now read Contact and open `contact.html`. There is no large phone-number button. The number stays a small text link on the contact page and in the footer.
+- "Request a Valuation" now reads "What's my property worth?" and opens the contact form with that interest selected (`contact.html?interest=worth`).
+- Removed the section "Built to find the buyer before the listing goes live," including its four supporting points.
+- Removed off-market wording: the off-market service card, the off-market listing card, "on- and off-market" in buyer representation, "on-market, off-market or both" in the process, "first look," "buyer list," "sell quietly," and "confidential offerings." The investor path now says "Get notified of new offerings."
+- In The problems we solve, the confidential-sale card was replaced with a public-marketing card. The other three cards are unchanged. The section is on the home page and on Services.
+- Core values on the home page are a draft. [CONFIRM: core values wording, drafted from brand guide words, needs Justin/Joseph approval]
+- About is a founder layout (centered heading, portrait beside the name, role line, credential rows). Longer bio sections are placeholder blocks, not new copy.
+- Listings uses one data file, a grayscale map, and filterable cards. The only record is the illustrative Riverbend Commons sample. Sold is an empty map plus an empty table.
+- Stock photos were removed. Photo areas are stone or charcoal placeholders with a caption chip (`PHOTO: subject, ratio, placement`). The headshot, logos, and sample listing image stay. `PHOTO-AUDIT.md` records the comparison and the shot list. Each placeholder is marked [CONFIRM: replace with Parlato's own photography].
+- The contact form posts to `functions/api/contact.js`. With no env vars it returns "not configured," and the page shows "Preview only, not connected."
+
+# Archive: version 3 notes
+
+
 Review preview dated Nov 9, 2026 (America/Indianapolis). Built from the new site draft and the Nov 9, 2026 brand guidelines Joseph sent. Nothing in this folder has been published or shared publicly.
 
 The new draft is the base for content and structure. Useful pieces from the earlier v2 preview were reused: self-hosted fonts, JSON-LD, accessibility patterns, the preview-only form treatment, Call and Request a Valuation CTAs, and the placeholder convention.
@@ -13,6 +31,7 @@ The new draft is the base for content and structure. Useful pieces from the earl
 - Added title, meta description, Open Graph tags, a `noindex` robots tag until publication is approved, and JSON-LD for Organization, RealEstateAgent, and Person. Canonical and social URLs are omitted until [CONFIRM DOMAIN] is set, because an invalid placeholder URL fails SEO checks.
 - Accessibility work includes a skip link, landmarks, labels on every input, visible focus, reduced-motion support, and WCAG AA contrast on the live palette. Right-arrow characters in buttons and links were replaced with a CSS chevron so copy does not use dash-like glyphs.
 - Added a Call CTA (`tel:317-981-9115`) next to Request a Valuation in the header, hero, process, founder section, and a sticky mobile bar.
+- Call buttons in the header, hero, process, founder section, and sticky mobile bar now say Contact and link to #contact. The sticky bar text is white so the outline button stays readable on black. Phone numbers shown as numbers stay tel: links.
 - The lead form and the e-blast signup show a visible "Preview only, not connected" notice. Submit still does not send data. HTML comments describe the monday WorkForms or webhook swap-in. Consent checkboxes were added. Phone and email in the contact block are now links.
 - The market-report "Download PDF" button was removed because the linked file is not in the repo and the draft already said the first edition is coming soon. The e-blast signup remains the way to request the report. Generic LinkedIn, Instagram, Facebook, and X homepage links were removed and marked [CONFIRM] until real profile URLs are supplied.
 - Three Verti CRE press items from the draft were removed from the visible page and replaced with an empty template. See "Decisions for Joseph" below.

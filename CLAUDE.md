@@ -86,6 +86,7 @@ Do not:
 - Present placeholders or illustrations as real deals.
 - Use em dashes or en dashes in copy, titles, meta, or alt text. Use a comma, a period, or a hyphenated compound instead.
 - Use the internal idea "new money at the old money table" as a tagline or in public copy.
+- Advertise or imply off-market sales, pocket listings, private or quiet sales, pre-marketing to a private buyer list, or finding a buyer before a listing is public. A signup may invite people to get notified of new offerings, with no off-market implication.
 
 Example headline from the guide: "Advisors to owners of Indiana real estate."
 
@@ -146,7 +147,13 @@ A Parlato email address, to replace the personal Gmail, is an open question in t
 
 ## How to work in this repo
 
-- Keep the site static: HTML, CSS, and JS only, deployable to Cloudflare Pages without a build step.
+The site is multiple pages, not one scrolling page. Top navigation, in order: About, Services, Insights, Listings, Sold, Contact. Files: `index.html`, `about.html`, `services.html`, `insights.html`, `listings.html`, `sold.html`, `contact.html`, `404.html`.
+
+`about.html` is a founder layout: centered heading, portrait beside the name, a role line, credential rows, then placeholder blocks. Do not fill those blocks with invented biography.
+
+Listings and sold records live in `data/listings.json` and `data/sold.json`. See README for how to add a listing. Do not invent deals. The phone number is small text on the contact page and in the footer only. There is no large phone button.
+
+- Keep the site static: HTML, CSS, and JS, plus `functions/api/contact.js` for the contact form. The function stays unconfigured until the env vars in the README are set. Do not hardcode a recipient address.
 - Preview with `python3 -m http.server` from the repo root.
 - Do not commit secrets, live form endpoints, or files from Verti or other firm systems.
 - Put design and copy decisions that need Joseph's review in `CHANGES.md`.
