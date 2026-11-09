@@ -32,23 +32,22 @@
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="about.html">About</a><a href="services.html">Services</a><a href="insights.html">Insights</a><a href="listings.html" aria-current="page">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="contact.html?interest=worth">What's my property worth?</a>
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="insights.html">Insights</a><a href="listings.html" aria-current="page">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
       </nav>
     </div>
   </header>
 <main id="main">
 
-    <section class="page-hero">
+    <section class="page-hero compact">
       <div class="wrap">
         <p class="eyebrow">Listings</p>
         <h1>Available properties.</h1>
         <p class="lede">Current listings from Parlato Real Estate. Request the offering memorandum for full financials.</p>
       </div>
     </section>
-    <section class="band" aria-labelledby="list-h">
+    <section class="band market-band" aria-labelledby="list-h">
       <div class="wrap">
         <h2 id="list-h" class="visually-hidden">Listing map and cards</h2>
-        <p class="note">[CONFIRM: map coordinates are placeholders, not a surveyed location.] [CONFIRM: deal room URL for each listing.]</p>
         <div id="market" class="market" data-source="data/listings.json" data-mode="listings" data-empty="No listings to show.">
           <p class="note">Loading listings.</p>
         </div>
@@ -57,6 +56,7 @@
     </section>
 
 </main>
+<!-- Sitemap: index.html, about.html, services.html, insights.html, listings.html, sold.html, valuation.html, contact.html, 404.html -->
 <footer class="foot">
     <div class="wrap">
       <div class="foot-brand">
@@ -64,8 +64,8 @@
         <p class="foot-line">Advisors to owners of Indiana real estate.</p>
       </div>
       <div class="foot-top">
-        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="insights.html">Insights</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a></nav>
-        <a class="foot-worth" href="contact.html?interest=worth">What's my property worth?</a>
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="insights.html">Insights</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <a class="foot-worth" href="valuation.html">What's my property worth?</a>
       </div>
       <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
       <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
@@ -73,7 +73,7 @@
   </footer>
   <div class="cta-bar" role="region" aria-label="Quick actions">
     <a class="btn" href="contact.html">Contact</a>
-    <a class="btn solid" href="contact.html?interest=worth">What's my property worth?</a>
+    <a class="btn solid" href="valuation.html">What's my property worth?</a>
   </div>
   <script src="js/main.js" defer></script>
 </body>

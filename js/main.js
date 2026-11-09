@@ -12,13 +12,9 @@
     if (reduce) head.classList.add("is-solid");
   }
 
+  document.documentElement.classList.add("js");
   var revealReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!revealReduce && "IntersectionObserver" in window) {
-    var revealNodes = document.querySelectorAll("main .band, main .photo-band, main .strip-band");
-    revealNodes.forEach(function (node, index) {
-      if (index === 0) return;
-      node.classList.add("reveal");
-    });
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -27,7 +23,13 @@
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll(".reveal").forEach(function (node) { revealObserver.observe(node); });
+    document.querySelectorAll("main .band, main .photo-band, main .strip-band").forEach(function (node, index) {
+      if (index === 0) return;
+      var rect = node.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.96) return;
+      node.classList.add("reveal");
+      revealObserver.observe(node);
+    });
   }
 
   var toggle = document.getElementById("navToggle");
@@ -57,7 +59,6 @@
     "Buy a property",
     "Lease space",
     "Find tenants",
-    "What's my property worth?",
     "Get notified of new offerings",
     "General inquiry"
   ];
@@ -66,7 +67,6 @@
     buy: "Buy a property",
     lease: "Lease space",
     tenants: "Find tenants",
-    worth: "What's my property worth?",
     notify: "Get notified of new offerings",
     general: "General inquiry"
   };
@@ -84,10 +84,6 @@
     "Sell a property": [
       "Property details",
       "Units or square footage, year built, occupancy, whether a rent roll and T-12 are available, timing"
-    ],
-    "What's my property worth?": [
-      "Property details",
-      "Units or square footage, year built, occupancy, whether a rent roll and T-12 are available"
     ],
     "Buy a property": [
       "What you want to buy",
@@ -127,10 +123,6 @@
     interestSelect.addEventListener("change", function () {
       setHint(interestSelect.value);
     });
-    if (window.location.hash === "#valuation" || chosen === "What's my property worth?") {
-      var formTop = document.getElementById("valuation");
-      if (formTop) formTop.scrollIntoView();
-    }
   }
 
   var inquiry = document.getElementById("inquiry");
@@ -241,6 +233,96 @@
     });
   }
 
+  var valuationForm = document.getElementById("valuation-form");
+  if (valuationForm) {
+    var valMsg = document.getElementById("formMsg");
+    var valPreview = document.getElementById("formPreview");
+    var valBox = document.getElementById("turnstile");
+    var valReady = false;
+    var valWidget = null;
+    function showVal(text, ok) {
+      if (!valMsg) return;
+      valMsg.hidden = false;
+      valMsg.textContent = text;
+      valMsg.classList.toggle("ok", !!ok);
+      valMsg.focus();
+    }
+    function loadValTurnstile(siteKey) {
+      if (!valBox || !siteKey) return;
+      function render() {
+        if (!window.turnstile) return;
+        valWidget = window.turnstile.render(valBox, { sitekey: siteKey, theme: "dark" });
+      }
+      if (window.turnstile) { render(); return; }
+      var script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.onload = render;
+      document.head.appendChild(script);
+    }
+    fetch("/api/valuation", { headers: { Accept: "application/json" } })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data && data.configured) {
+          valReady = true;
+          if (valPreview) valPreview.hidden = true;
+          loadValTurnstile(data.turnstileSiteKey);
+        }
+      })
+      .catch(function () { valReady = false; });
+    valuationForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (typeof valuationForm.reportValidity === "function" && !valuationForm.reportValidity()) return;
+      if (!valReady) {
+        showVal("Preview only, not connected. This form is not linked to an inbox yet. Nothing was sent.", false);
+        return;
+      }
+      var payload = {
+        name: valuationForm.name.value,
+        email: valuationForm.email.value,
+        phone: valuationForm.phone.value,
+        address: valuationForm.address.value,
+        city: valuationForm.city.value,
+        assetType: valuationForm.assetType.value,
+        size: valuationForm.size.value,
+        yearBuilt: valuationForm.yearBuilt.value,
+        occupancy: valuationForm.occupancy.value,
+        timeline: valuationForm.timeline.value,
+        reason: valuationForm.reason.value,
+        notes: valuationForm.notes.value,
+        consent: valuationForm.consent.checked,
+        company_website: valuationForm.company_website ? valuationForm.company_website.value : "",
+        turnstileToken: window.turnstile && valWidget !== null ? (window.turnstile.getResponse(valWidget) || "") : ""
+      };
+      var submitBtn = valuationForm.querySelector("[type=submit]");
+      if (submitBtn) submitBtn.disabled = true;
+      fetch("/api/valuation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) { return res.json().then(function (data) { return data || {}; }); })
+        .then(function (data) {
+          if (data.ok) {
+            showVal("Thank you. Your valuation request is in. You will hear back from Justin directly.", true);
+            valuationForm.reset();
+            if (window.turnstile && valWidget !== null) window.turnstile.reset(valWidget);
+          } else if (data.error === "not configured" || data.configured === false) {
+            valReady = false;
+            if (valPreview) valPreview.hidden = false;
+            showVal("Preview only, not connected. This form is not linked to an inbox yet. Nothing was sent.", false);
+          } else {
+            showVal(data.error || "The message could not be sent. Please try again, or use the contact page.", false);
+            if (window.turnstile && valWidget !== null) window.turnstile.reset(valWidget);
+          }
+        })
+        .catch(function () {
+          showVal("Preview only, not connected. This form is not linked to an inbox yet. Nothing was sent.", false);
+        })
+        .then(function () { if (submitBtn) submitBtn.disabled = false; });
+    });
+  }
+
   /* LinkedIn posts: add the newest first. Each needs a confirmed date, title, summary, and the post's LinkedIn URL.
      Do not invent posts. Leave this array empty until Joseph or Justin supplies real, approved items. */
   var POSTS = [
@@ -324,6 +406,14 @@
 
   function renderMarket(root, items, mode, emptyCopy) {
     root.innerHTML = "";
+    var filters = document.createElement("div");
+    filters.className = "filters";
+    var note = null;
+    if (mode === "listings") {
+      note = document.createElement("p");
+      note.className = "market-note";
+      note.textContent = "[CONFIRM: map coordinates are placeholders, not a surveyed location.] [CONFIRM: deal room URL for each listing.]";
+    }
     var layout = document.createElement("div");
     layout.className = "market-layout";
     var mapEl = document.createElement("div");
@@ -334,9 +424,10 @@
     side.className = "market-side";
     layout.appendChild(mapEl);
     layout.appendChild(side);
-    root.appendChild(layout);
 
     if (!items.length) {
+      if (note) root.appendChild(note);
+      root.appendChild(layout);
       var empty = document.createElement("p");
       empty.className = "empty";
       empty.textContent = emptyCopy;
@@ -345,8 +436,9 @@
       return;
     }
 
-    var filters = document.createElement("div");
-    filters.className = "filters";
+    root.appendChild(filters);
+    if (note) root.appendChild(note);
+    root.appendChild(layout);
     var typeLabel = document.createElement("label");
     typeLabel.textContent = "Asset type";
     var typeSelect = document.createElement("select");
@@ -363,7 +455,6 @@
     statusLabel.appendChild(statusSelect);
     filters.appendChild(typeLabel);
     filters.appendChild(statusLabel);
-    side.appendChild(filters);
 
     var list = document.createElement("div");
     list.className = "deal-list";
@@ -374,7 +465,7 @@
       card.className = "deal";
       card.dataset.type = item.assetType || "";
       card.dataset.status = item.status || "";
-      var price = item.price || "Call for offers";
+      var price = item.illustrative ? "Price: sample" : (item.price || "Call for offers");
       var room = hasDealRoom(item)
         ? '<a class="btn" href="' + esc(item.dealRoomUrl) + '">View deal room</a>'
         : '<button class="btn" type="button" disabled>Deal room coming soon</button>';
@@ -464,36 +555,12 @@
     return "<h3>" + esc(item.name) + "</h3><p>" + esc(item.city) + "</p><p>" + esc(item.assetType) + "</p>" + room;
   }
 
-  function clusterGroups(map, rows) {
-    var radius = 48;
-    var used = {};
-    var groups = [];
-    rows.forEach(function (row, i) {
-      if (used[i]) return;
-      var p = map.project([row.item.lng, row.item.lat]);
-      var group = [row];
-      used[i] = true;
-      rows.forEach(function (other, j) {
-        if (used[j]) return;
-        var q = map.project([other.item.lng, other.item.lat]);
-        var dx = p.x - q.x;
-        var dy = p.y - q.y;
-        if (dx * dx + dy * dy < radius * radius) {
-          group.push(other);
-          used[j] = true;
-        }
-      });
-      groups.push(group);
-    });
-    return groups;
-  }
-
   function observeMap(mapEl, cards, onReady) {
     var started = false;
     function start() {
       if (started) return;
       started = true;
-      loadMapLibre()
+      loadLeaflet()
         .then(function () { return drawMap(mapEl, cards, onReady); })
         .catch(function () {
           mapEl.textContent = "The map could not be loaded.";
@@ -510,109 +577,120 @@
           start();
         }
       });
-    }, { rootMargin: "200px" });
+    }, { rootMargin: "240px" });
     observer.observe(mapEl);
   }
 
-  function loadMapLibre() {
-    if (window.maplibregl) return Promise.resolve();
-    return new Promise(function (resolve, reject) {
-      var css = document.createElement("link");
-      css.rel = "stylesheet";
-      css.href = "js/vendor/maplibre/maplibre-gl.css";
-      document.head.appendChild(css);
-      var script = document.createElement("script");
-      script.src = "js/vendor/maplibre/maplibre-gl.js";
-      script.onload = function () { resolve(); };
-      script.onerror = reject;
-      document.body.appendChild(script);
-    });
+  function loadLeaflet() {
+    if (window.L && window.L.markerClusterGroup) return Promise.resolve();
+    function style(href) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+      return Promise.resolve();
+    }
+    function script(src) {
+      return new Promise(function (resolve, reject) {
+        var el = document.createElement("script");
+        el.src = src;
+        el.onload = resolve;
+        el.onerror = reject;
+        document.body.appendChild(el);
+      });
+    }
+    return style("js/vendor/leaflet/leaflet.css")
+      .then(function () { return script("js/vendor/leaflet/leaflet.js"); })
+      .then(function () { return script("js/vendor/leaflet/leaflet.markercluster.js"); });
   }
 
   function drawMap(mapEl, cards, onReady) {
     var points = cards.filter(function (row) {
       return typeof row.item.lat === "number" && typeof row.item.lng === "number";
     });
-    var center = points.length ? [points[0].item.lng, points[0].item.lat] : [-86.1581, 39.7684];
+    var center = points.length ? [points[0].item.lat, points[0].item.lng] : [39.7684, -86.1581];
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var map = new window.maplibregl.Map({
-      container: mapEl,
-      style: "https://tiles.openfreemap.org/styles/positron",
-      center: center,
-      zoom: points.length ? 11 : 8,
-      attributionControl: true,
-      fadeDuration: reduce ? 0 : 300
+    var map = window.L.map(mapEl, {
+      scrollWheelZoom: false,
+      zoomControl: true,
+      attributionControl: true
+    }).setView(center, points.length ? 12 : 8);
+    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      subdomains: "abc",
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var group = window.L.markerClusterGroup({
+      showCoverageOnHover: false,
+      spiderfyOnMaxZoom: true,
+      iconCreateFunction: function (cluster) {
+        return window.L.divIcon({
+          html: "<span>" + cluster.getChildCount() + "</span>",
+          className: "cluster",
+          iconSize: [36, 36]
+        });
+      }
     });
-    map.addControl(new window.maplibregl.NavigationControl({ showCompass: false }), "top-left");
-    map.scrollZoom.disable();
-    var bag = [];
-    var lastZoom = null;
-    function clearBag() {
-      bag.forEach(function (marker) { marker.remove(); });
-      bag = [];
-      points.forEach(function (row) { row.marker = null; });
+    map.addLayer(group);
+
+    function markerEl(marker) {
+      var el = marker.getElement && marker.getElement();
+      return el ? (el.querySelector(".pin") || el) : null;
     }
-    function render(force) {
-      if (!map.loaded()) return;
-      var zoom = Math.round(map.getZoom() * 2) / 2;
-      if (!force && lastZoom === zoom) return;
-      lastZoom = zoom;
-      clearBag();
-      var shown = points.filter(function (row) { return !row.card.hidden; });
-      clusterGroups(map, shown).forEach(function (group) {
-        if (group.length === 1) {
-          var row = group[0];
-          var el = document.createElement("button");
-          el.type = "button";
-          el.className = "pin";
-          el.setAttribute("aria-label", row.item.name || "Listing");
-          row.marker = new window.maplibregl.Marker({ element: el })
-            .setLngLat([row.item.lng, row.item.lat])
-            .setPopup(new window.maplibregl.Popup({ offset: 16, maxWidth: "260px", focusAfterOpen: false }).setHTML(popupHtml(row.item)))
-            .addTo(map);
-          bag.push(row.marker);
-        } else {
-          var elc = document.createElement("button");
-          elc.type = "button";
-          elc.className = "cluster";
-          elc.textContent = String(group.length);
-          elc.setAttribute("aria-label", group.length + " listings in this area");
-          var lng = 0;
-          var lat = 0;
-          group.forEach(function (row) { lng += row.item.lng; lat += row.item.lat; });
-          lng /= group.length;
-          lat /= group.length;
-          elc.addEventListener("click", function () {
-            var bounds = new window.maplibregl.LngLatBounds();
-            group.forEach(function (row) { bounds.extend([row.item.lng, row.item.lat]); });
-            var opts = { padding: 64, maxZoom: map.getZoom() + 2 };
-            if (reduce) map.fitBounds(bounds, opts);
-            else map.fitBounds(bounds, opts);
-          });
-          bag.push(new window.maplibregl.Marker({ element: elc }).setLngLat([lng, lat]).addTo(map));
-        }
+    function paint(row, className, on) {
+      row.card.classList.toggle(className, on);
+      var el = row.marker ? markerEl(row.marker) : null;
+      if (el) el.classList.toggle(className, on);
+    }
+    function activate(row) {
+      points.forEach(function (other) { paint(other, "is-active", other === row); });
+    }
+
+    points.forEach(function (row) {
+      var icon = window.L.divIcon({
+        className: "pin-wrap",
+        html: '<button type="button" class="pin" aria-label="' + esc(row.item.name || "Listing") + '"></button>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+        popupAnchor: [0, -12]
+      });
+      var marker = window.L.marker([row.item.lat, row.item.lng], { icon: icon, title: row.item.name || "", keyboard: true });
+      marker.bindPopup(popupHtml(row.item), { maxWidth: 260, autoPan: true });
+      marker.on("add", function () {
+        var el = markerEl(marker);
+        if (!el || el._parlatoBound) return;
+        el._parlatoBound = true;
+        el.addEventListener("mouseenter", function () { paint(row, "is-hot", true); });
+        el.addEventListener("mouseleave", function () { paint(row, "is-hot", false); });
+      });
+      row.marker = marker;
+      group.addLayer(marker);
+    });
+
+    function render() {
+      points.forEach(function (row) {
+        var show = !row.card.hidden;
+        var present = group.hasLayer(row.marker);
+        if (show && !present) group.addLayer(row.marker);
+        if (!show && present) group.removeLayer(row.marker);
       });
     }
     cards._render = render;
-    map.on("load", function () {
-      map.resize();
-      if (points.length > 1) {
-        var bounds = new window.maplibregl.LngLatBounds();
-        points.forEach(function (row) { bounds.extend([row.item.lng, row.item.lat]); });
-        map.fitBounds(bounds, { padding: 48, maxZoom: 12, duration: reduce ? 0 : 600 });
-      }
-      render(true);
-    });
-    map.on("zoomend", function () { render(true); });
-    cards.forEach(function (row) {
-      if (typeof row.item.lng !== "number") return;
+
+    if (points.length > 1) {
+      var bounds = window.L.latLngBounds(points.map(function (row) {
+        return [row.item.lat, row.item.lng];
+      }));
+      map.fitBounds(bounds, { padding: [36, 36], maxZoom: 12, animate: !reduce });
+    }
+
+    points.forEach(function (row) {
       function focusPin() {
-        var motion = reduce ? { duration: 0 } : {};
-        map.flyTo(Object.assign({ center: [row.item.lng, row.item.lat], zoom: Math.max(map.getZoom(), 12), essential: true }, motion));
+        activate(row);
+        var open = function () { row.marker.openPopup(); };
+        if (group.zoomToShowLayer) group.zoomToShowLayer(row.marker, open);
+        else open();
         mapEl.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
-        window.setTimeout(function () {
-          if (row.marker) row.marker.togglePopup();
-        }, reduce ? 0 : 450);
       }
       row.card.addEventListener("click", function (event) {
         if (event.target.closest("a, button")) return;
@@ -626,6 +704,8 @@
       });
       row.card.tabIndex = 0;
     });
+
+    window.setTimeout(function () { map.invalidateSize(); }, 60);
     onReady(map);
   }
 })();

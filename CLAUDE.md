@@ -147,13 +147,13 @@ A Parlato email address, to replace the personal Gmail, is an open question in t
 
 ## How to work in this repo
 
-The site is multiple pages, not one scrolling page. Top navigation, in order: About, Services, Insights, Listings, Sold, Contact. Files: `index.html`, `about.html`, `services.html`, `insights.html`, `listings.html`, `sold.html`, `contact.html`, `404.html`.
+The site is multiple pages, not one scrolling page. Top navigation, in order: About, Services, Insights, Listings, Sold, Contact. Files: `index.html`, `about.html`, `services.html`, `insights.html`, `listings.html`, `sold.html`, `valuation.html`, `contact.html`, `404.html`. `valuation.html` is the owner valuation form, linked from every "What's my property worth?" button. It is also in the footer.
 
 `about.html` is a founder layout: centered heading, portrait beside the name, a role line, credential rows, then placeholder blocks. Do not fill those blocks with invented biography.
 
 Listings and sold records live in `data/listings.json` and `data/sold.json`. See README for how to add a listing. Do not invent deals. The phone number is small text on the contact page and in the footer only. There is no large phone button.
 
-- Keep the site static: HTML, CSS, and JS, plus `functions/api/contact.js` for the contact form. The function stays unconfigured until the env vars in the README are set. Do not hardcode a recipient address.
+- Keep the site static: HTML, CSS, and JS, plus `functions/api/contact.js` and `functions/api/valuation.js`. Both stay unconfigured until the env vars in the README are set. Do not hardcode a recipient address. Valuation mail uses the same `CONTACT_TO_EMAIL`, with a subject that starts "Valuation request".
 - Preview with `python3 -m http.server` from the repo root.
 - Do not commit secrets, live form endpoints, or files from Verti or other firm systems.
 - Put design and copy decisions that need Joseph's review in `CHANGES.md`.

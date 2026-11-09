@@ -14,20 +14,20 @@ What those sites tend to do:
 
 Parlato before this pass was the opposite on most pages: one home hero and two banners, then type-only inner pages, except the founder headshot, the sample memorandum, and the sample listing illustration.
 
-This pass does not add stock. Every new frame is a Stone (`#F3F4F6`) or charcoal gradient at the size the finished photo should be, with a white caption chip in the brand caption style. The founder headshot, both logos, the sample offering memorandum, and the Riverbend Commons sample illustration stay.
+This pass fills the frames with real photographs used as placeholders. Joseph's three named aerial files were not available here, so the home hero, the canal band, and the downtown-grid band use licensed Indianapolis photographs of those subjects. The stadium name is cropped out of the dusk aerial. Every stand-in is credited in `images/CREDITS.md` and marked `[PLACEHOLDER PHOTO: replace with Parlato photography]`. Visible caption chips are removed where a photograph fills the spot. The founder headshot stays grayscale. The sample memorandum and the Riverbend Commons illustration stay.
 
 ## Page by page
 
-| Page | Photos before | What changed | Count now |
-| --- | --- | --- | --- |
-| Home | 3 stock frames (skyline hero, canal band, Monument Circle band) | Same three positions, now placeholders | 3 placeholders |
-| Services | 1 stock hero | Placeholder hero, 5 service tiles, 1 divider band | 7 placeholders |
-| About | 1 real headshot | Headshot kept. Added one full-bleed band under the bio | 1 photo, 1 placeholder |
-| Insights | 1 stock hero, 1 sample memorandum | Placeholder hero, a frame on the report card, 3 insight cards. Memorandum kept | 1 photo, 5 placeholders |
-| Listings | 1 sample listing illustration | Illustration kept. A listing with no `photo` file renders a placeholder card | 1 illustration |
-| Sold | None | One full-bleed band above the empty table. No invented deals | 1 placeholder |
-| Contact | None | One 3:2 inset by the address | 1 placeholder |
-| 404 | None | None. A missing page should not pretend to be a property | 0 |
+| Page | What is in the frame now |
+| --- | --- |
+| Home | Skyline hero, canal-and-towers band, Monument Circle band. All licensed placeholders. |
+| Services | Multifamily hero, tiles for multifamily, warehouse, charts, downtown streets, and an empty suite, plus a charts band. |
+| About | Grayscale headshot kept. Full-bleed multifamily exterior under the bio. |
+| Insights | Downtown-grid hero (stadium signage cropped out), charts card, canal, warehouse, and farmland cards. Sample memorandum kept. |
+| Listings | Sample listing illustration kept. |
+| Sold | Warehouse exterior, labeled as not a closed Parlato transaction. |
+| Contact | Empty office interior, labeled as not the Parlato office. |
+| 404 | No photograph. |
 
 ## Shot list to commission
 

@@ -20,11 +20,13 @@ There is no build step. Forms show a "preview only, not connected" notice and do
 
 ## What is in the folder
 
-Pages, in nav order after the home page: `about.html`, `services.html`, `insights.html`, `listings.html`, `sold.html`, `contact.html`. `index.html` is a short photo-led home page. `404.html` is the missing-page layout.
+Pages, in nav order after the home page: `about.html`, `services.html`, `insights.html`, `listings.html`, `sold.html`, `contact.html`. `valuation.html` is a separate owner form, linked from every "What's my property worth?" button and from the footer. `index.html` is a short photo-led home page. `404.html` is the missing-page layout.
+
+<!-- Sitemap: index.html, about.html, services.html, insights.html, listings.html, sold.html, valuation.html, contact.html, 404.html -->
 
 - `css/styles.css` and `js/main.js` are the styles and behavior.
 - `fonts/` holds self-hosted Bodoni Moda and Libre Franklin woff2 files (no Google Fonts request at runtime).
-- `images/` holds logos, the founder headshot, and the sample artwork. Photo areas on the pages are labeled placeholders until Parlato commissions the shots in `PHOTO-AUDIT.md`.
+- `images/` holds logos, the founder headshot, the sample artwork, and licensed stand-in photographs. Credits are in `images/CREDITS.md`. The shot list to replace them is in `PHOTO-AUDIT.md`.
 - `data/listings.json` and `data/sold.json` feed the map and the cards.
 - `functions/api/contact.js` is the contact form endpoint. It does nothing until the env vars below are set.
 - `CLAUDE.md` is the collaboration guide. `CHANGES.md` is the review log.
@@ -46,11 +48,11 @@ Edit `data/listings.json`. One object per listing:
 
 Do not add a closed deal to `data/sold.json` unless Joseph has approved that exact transaction. Do not describe a listing as off-market, private, or quiet.
 
-The map is MapLibre with the OpenFreeMap Positron style (no API key). Attribution stays on the map. OpenFreeMap serves OpenStreetMap data.
+The map is Leaflet with OpenStreetMap raster tiles, so it draws without WebGL. Attribution stays on the map.
 
 ## Activating the contact form
 
-The form posts to `/api/contact`. Until the items below are set in the Cloudflare Pages project, the function returns `not configured` and the page keeps the notice "Preview only, not connected." No recipient address is stored in the repo.
+The contact form posts to `/api/contact`. The valuation form posts to `/api/valuation`. Until the items below are set in the Cloudflare Pages project, each function returns `not configured` and the page keeps the notice "Preview only, not connected." No recipient address is stored in the repo. Both emails go to `CONTACT_TO_EMAIL`. A valuation email subject starts with "Valuation request".
 
 Set these environment variables:
 

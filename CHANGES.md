@@ -5,14 +5,15 @@
 The site is now separate pages. Navigation order is About, Services, Insights, Listings, Sold, Contact. Home is a short photo-led overview.
 
 - Call buttons now read Contact and open `contact.html`. There is no large phone-number button. The number stays a small text link on the contact page and in the footer.
-- "Request a Valuation" now reads "What's my property worth?" and opens the contact form with that interest selected (`contact.html?interest=worth`).
+- "Request a Valuation" now reads "What's my property worth?" and opens `valuation.html`, a separate owner form. The contact form no longer offers that interest. The valuation email uses `CONTACT_TO_EMAIL` and a subject that starts "Valuation request". Intro and "what happens next" copy are marked [CONFIRM].
 - Removed the section "Built to find the buyer before the listing goes live," including its four supporting points.
 - Removed off-market wording: the off-market service card, the off-market listing card, "on- and off-market" in buyer representation, "on-market, off-market or both" in the process, "first look," "buyer list," "sell quietly," and "confidential offerings." The investor path now says "Get notified of new offerings."
 - In The problems we solve, the confidential-sale card was replaced with a public-marketing card. The other three cards are unchanged. The section is on the home page and on Services.
 - Core values on the home page are a draft. [CONFIRM: core values wording, drafted from brand guide words, needs Justin/Joseph approval]
 - About is a founder layout (centered heading, portrait beside the name, role line, credential rows). Longer bio sections are placeholder blocks, not new copy.
-- Listings uses one data file, a grayscale map, and filterable cards. The only record is the illustrative Riverbend Commons sample. Sold is an empty map plus an empty table.
-- Stock photos were removed. Photo areas are stone or charcoal placeholders with a caption chip (`PHOTO: subject, ratio, placement`). The headshot, logos, and sample listing image stay. `PHOTO-AUDIT.md` records the comparison and the shot list. Each placeholder is marked [CONFIRM: replace with Parlato's own photography].
+- Listings uses one data file, a grayscale Leaflet map (OpenStreetMap raster tiles, no WebGL), and filterable cards. The map is the large sticky pane. The only record is the illustrative Riverbend Commons sample, and its price is shown as "Price: sample" so the figure is not read as a live asking price. Sold is an empty map plus an empty table.
+- The home hero still includes the flagged line "A founder on every deal." It is kept on purpose and listed under Claims flagged for verification.
+- Photo spots use licensed stand-in photographs, credited in `images/CREDITS.md`, each marked [PLACEHOLDER PHOTO: replace with Parlato photography]. Joseph's three named aerial files were not in the workspace, so Indianapolis skyline, canal, Monument Circle, and a cropped downtown-grid aerial fill those roles. The headshot stays grayscale.
 - The contact form posts to `functions/api/contact.js`. With no env vars it returns "not configured," and the page shows "Preview only, not connected."
 
 # Archive: version 3 notes
