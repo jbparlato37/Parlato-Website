@@ -1,12 +1,14 @@
 (function () {
   var head = document.querySelector(".site-head");
-  var hero = document.querySelector("main > section.hero-photo");
-  if (head && hero && hero === document.querySelector("main > section")) {
+  if (head) {
+    var heroBand = document.querySelector("main > section.hero-photo, main > section.page-hero");
     function paintHead() {
-      head.classList.toggle("is-solid", window.scrollY > 8);
+      var past = heroBand ? heroBand.offsetTop + heroBand.offsetHeight - head.offsetHeight : 0;
+      head.classList.toggle("is-busy", past > 0 && window.scrollY > past);
     }
     paintHead();
     window.addEventListener("scroll", paintHead, { passive: true });
+    window.addEventListener("resize", paintHead);
   }
 
   document.documentElement.classList.add("js");
