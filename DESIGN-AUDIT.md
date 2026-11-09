@@ -81,3 +81,22 @@ A 3 on the listings and sold heroes is the short type band. A tall photograph th
 - Services no longer repeats one photograph inside a single page.
 - The About portrait column is wider.
 - Mobile hero text clears the sticky Contact / valuation bar.
+
+## Translucency pass
+
+Checked after the header became a uniform 70 percent white bar. The benchmark is the quiet overlays on Verti, INV, Xmark, Ellsbury, and Merrill: a photograph stays visible, and type sits on a darker or frosted patch only where it needs to. Each item below was looked at on desktop and, where it appears, on a phone.
+
+| Place | Pages | Changed | Reason |
+| --- | --- | --- | --- |
+| Header bar | All | Already done | Uniform translucent white. Not changed again in this pass. |
+| Hero scrim | Home, About, Services, Insights, Contact, Valuation | Yes | The wash was nearly opaque across the whole photograph. It is lighter over the picture and darker only behind the type. The home line stays at 8.7:1 on desktop and 5.4:1 on a phone. |
+| Portrait caption | About | Yes | The name chip is frosted white over the headshot. Black type on that chip stays above 4.5:1. |
+| Mobile action bar | All, under 960px | Yes | Frosted black with a light blur, matching the header. The buttons stay solid, so the labels stay white on a dark ground. |
+| Preview notice | All | No | It has to read as a warning. A tint would weaken it. |
+| Fact strip | Home | No | It is its own black band, not a layer on a photograph. |
+| Valuation close and other black bands | Home, Contact, Valuation | No | White type on black is the brand. A tint would drop that contrast. |
+| Footer | All | No | Same reason. It does not sit on a photograph. |
+| Forms and fields | Contact, Valuation | No | Labels and inputs need a steady ground. |
+| Filters, cards, status chips, map | Listings, Sold | No | The map is the content. A frosted sheet over it would hide the pins. The cards already sit on white. |
+| Rules | All | No | They are already Rule Grey. Thinner opacity would lose the divider. |
+| Gold | Home headline | No | One gold word per view. Nothing else was tinted gold. |
