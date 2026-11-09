@@ -426,6 +426,11 @@
     layout.appendChild(side);
 
     if (!items.length) {
+      root.innerHTML = "";
+      if (mode === "sold") {
+        root.hidden = true;
+        return;
+      }
       if (note) root.appendChild(note);
       root.appendChild(layout);
       var empty = document.createElement("p");

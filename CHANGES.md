@@ -13,6 +13,7 @@ The site is now separate pages. Navigation order is About, Services, Insights, L
 - About is a founder layout (centered heading, portrait beside the name, role line, credential rows). Longer bio sections are placeholder blocks, not new copy.
 - Listings uses one data file, a grayscale Leaflet map (OpenStreetMap raster tiles, no WebGL), and filterable cards. The map is the large sticky pane. The only record is the illustrative Riverbend Commons sample, and its price is shown as "Price: sample" so the figure is not read as a live asking price. Sold is an empty map plus an empty table.
 - The home hero still includes the flagged line "A founder on every deal." It is kept on purpose and listed under Claims flagged for verification.
+- Design re-audit is in `DESIGN-AUDIT.md`. About, Contact, and Valuation open on a short photograph. Listing cards are photo first. An empty Sold page does not draw a map or a building photograph. The Services page no longer repeats the same photograph in one view.
 - Photo spots use licensed stand-in photographs, credited in `images/CREDITS.md`, each marked [PLACEHOLDER PHOTO: replace with Parlato photography]. Joseph's three named aerial files were not in the workspace, so Indianapolis skyline, canal, Monument Circle, and a cropped downtown-grid aerial fill those roles. The headshot stays grayscale.
 - The contact form posts to `functions/api/contact.js`. With no env vars it returns "not configured," and the page shows "Preview only, not connected."
 
