@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.lighthouseci/
+*.report.html
+*.report.json
+.cache/
+.env
+.idea/
+.vscode/
+*.log
