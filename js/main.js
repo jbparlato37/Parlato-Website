@@ -1,17 +1,4 @@
 (function () {
-  var head = document.querySelector(".site-head");
-  var first = document.querySelector("main > section, main > .hero-photo");
-  if (head && first && (first.classList.contains("hero-photo") || first.classList.contains("page-hero"))) {
-    document.body.classList.add("has-hero");
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    function paintHead() {
-      head.classList.toggle("is-solid", window.scrollY > 24);
-    }
-    paintHead();
-    window.addEventListener("scroll", paintHead, { passive: true });
-    if (reduce) head.classList.add("is-solid");
-  }
-
   document.documentElement.classList.add("js");
   var revealReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!revealReduce && "IntersectionObserver" in window) {
