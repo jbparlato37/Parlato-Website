@@ -16,7 +16,7 @@ The site is now separate pages. Navigation order is About, Services, Insights, L
 - The header is a solid white bar across the full width on every page, with the black logo and dark navigation. It stays white while sticky. The hero photograph starts below the bar.
 - The home line "Commercial real estate brokerage, Central Indiana" is 18px on desktop and 15px on a phone, Libre Franklin 600, white, with a darker lower-left scrim and a soft shadow.
 - Design re-audit is in `DESIGN-AUDIT.md`. About, Contact, and Valuation open on a short photograph. Listing cards are photo first. An empty Sold page does not draw a map or a building photograph. The Services page no longer repeats the same photograph in one view.
-- Photo spots use licensed stand-in photographs, credited in `images/CREDITS.md`, each marked [PLACEHOLDER PHOTO: replace with Parlato photography]. Joseph's three named aerial files were not in the workspace, so Indianapolis skyline, canal, Monument Circle, and a cropped downtown-grid aerial fill those roles. The headshot stays grayscale.
+- Photo spots stay marked [PLACEHOLDER PHOTO: replace with Parlato photography] and are credited in `images/CREDITS.md`. The home hero, the downtown banner, and the grid banner are Joseph Surak's own Indianapolis aerials, not stock. The grid crop keeps the street grid and keeps the stadium and team signage from dominating. Monument Circle and the other tiles stay licensed stand-ins. The headshot stays grayscale.
 - The contact form posts to `functions/api/contact.js`. With no env vars it returns "not configured," and the page shows "Preview only, not connected."
 
 # Archive: version 3 notes
@@ -130,5 +130,5 @@ The SEO deduction is the intentional `noindex, nofollow` robots tag, which Light
 
 ## Local preview files
 
-- `/workspace/parlato-repo/previews/preview-desktop.png` (1280px wide, full page)
-- `/workspace/parlato-repo/previews/preview-mobile.png` (390px wide, full page)
+- `previews/home-desktop.png` and `previews/preview-desktop.png` (1280px wide, full home page)
+- `previews/home-mobile.png` and `previews/preview-mobile.png` (390px wide, full home page)

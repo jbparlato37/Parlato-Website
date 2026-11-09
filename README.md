@@ -26,7 +26,7 @@ Pages, in nav order after the home page: `about.html`, `services.html`, `insight
 
 - `css/styles.css` and `js/main.js` are the styles and behavior.
 - `fonts/` holds self-hosted Bodoni Moda and Libre Franklin woff2 files (no Google Fonts request at runtime).
-- `images/` holds logos, the founder headshot, the sample artwork, and licensed stand-in photographs. Credits are in `images/CREDITS.md`. The shot list to replace them is in `PHOTO-AUDIT.md`.
+- `images/` holds logos, the founder headshot, the sample artwork, and stand-in photographs. Three Indianapolis aerials are Joseph's own. The rest of the stand-ins are licensed stock. Credits are in `images/CREDITS.md`. The shot list to replace them is in `PHOTO-AUDIT.md`.
 - `data/listings.json` and `data/sold.json` feed the map and the cards.
 - `functions/api/contact.js` is the contact form endpoint. It does nothing until the env vars below are set.
 - `CLAUDE.md` is the collaboration guide. `CHANGES.md` is the review log.

@@ -1007,6 +1007,10 @@ input:focus, select:focus, textarea:focus {
   object-fit: cover;
   object-position: center 40%;
 }
+/* Skyline aerial: keep the towers in frame when a phone crops the panorama. */
+.hero-photo img.hero-img[src*="hero-indy-skyline"] { object-position: 42% center; }
+/* Downtown aerial: the river sits high in the frame, so short bands keep that edge. */
+img[src*="banner-indy-downtown"] { object-position: center 17%; }
 .photo-slot {
   position: relative;
   display: block;
