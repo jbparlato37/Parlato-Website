@@ -1,4 +1,14 @@
 (function () {
+  var head = document.querySelector(".site-head");
+  var hero = document.querySelector("main > section.hero-photo");
+  if (head && hero && hero === document.querySelector("main > section")) {
+    function paintHead() {
+      head.classList.toggle("is-solid", window.scrollY > 8);
+    }
+    paintHead();
+    window.addEventListener("scroll", paintHead, { passive: true });
+  }
+
   document.documentElement.classList.add("js");
   var revealReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!revealReduce && "IntersectionObserver" in window) {
