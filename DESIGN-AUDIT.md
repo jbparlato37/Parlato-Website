@@ -91,7 +91,8 @@ Checked after the header became a uniform 70 percent white bar. The benchmark is
 | Header bar | All | Already done | Uniform translucent white. Not changed again in this pass. |
 | Hero scrim | Home, About, Services, Insights, Contact, Valuation | Yes | The wash was nearly opaque across the whole photograph. It is lighter over the picture and darker only behind the type. The home line stays at 8.7:1 on desktop and 5.4:1 on a phone. |
 | Portrait caption | About | Yes | The name chip is frosted white over the headshot. Black type on that chip stays above 4.5:1. |
-| Mobile action bar | All, under 960px | Yes | Frosted black with a light blur, matching the header. The buttons stay solid, so the labels stay white on a dark ground. |
+| Mobile action bar | All, under 960px | Yes | Frosted black with a light blur, matching the header. |
+| Contact and valuation buttons | Header, heroes, black bands, page ends, mobile bar | Yes | Filled and outline links are frosted. Header fill is rgba(13, 13, 13, 0.7) with white type, about 9.4:1 on the home photo. On a photo or black band the filled link is rgba(255, 255, 255, 0.22) and the outline is rgba(255, 255, 255, 0.18), both with white type. Worst measured there is 5.2:1 on the black valuation band. On a light page the filled link stays rgba(13, 13, 13, 0.7). Hover and focus go to about 0.9. Form submit buttons stay solid. |
 | Preview notice | All | No | It has to read as a warning. A tint would weaken it. |
 | Fact strip | Home | No | It is its own black band, not a layer on a photograph. |
 | Valuation close and other black bands | Home, Contact, Valuation | No | White type on black is the brand. A tint would drop that contrast. |

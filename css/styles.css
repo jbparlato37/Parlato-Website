@@ -1129,6 +1129,90 @@ img[src*="banner-indy-downtown"] { object-position: center 17%; }
   color: var(--black);
   border-color: var(--white);
 }
+/* Contact and valuation links only. Form submit buttons stay solid. */
+a.btn[href="valuation.html"],
+a.btn[href="contact.html"] {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+a.btn.solid[href="valuation.html"] {
+  background: rgba(13, 13, 13, 0.7);
+  color: #fff;
+  border: 1px solid rgba(13, 13, 13, 0.85);
+}
+a.btn.solid[href="valuation.html"]:hover,
+a.btn.solid[href="valuation.html"]:focus-visible {
+  background: rgba(13, 13, 13, 0.9);
+  color: #fff;
+  border-color: rgba(13, 13, 13, 0.9);
+}
+a.btn[href="contact.html"] {
+  background: rgba(13, 13, 13, 0.06);
+  color: #0d0d0d;
+  border: 1px solid rgba(13, 13, 13, 0.55);
+}
+a.btn[href="contact.html"]:hover,
+a.btn[href="contact.html"]:focus-visible {
+  background: rgba(13, 13, 13, 0.88);
+  color: #fff;
+  border-color: rgba(13, 13, 13, 0.88);
+}
+.hero-photo a.btn.solid[href="valuation.html"],
+.page-hero a.btn.solid[href="valuation.html"],
+.band.ink a.btn.solid[href="valuation.html"],
+.cta-bar a.btn.solid[href="valuation.html"] {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.62);
+}
+.hero-photo a.btn[href="contact.html"],
+.page-hero a.btn[href="contact.html"],
+.band.ink a.btn[href="contact.html"],
+.cta-bar a.btn[href="contact.html"] {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.hero-photo a.btn.solid[href="valuation.html"]:hover,
+.hero-photo a.btn.solid[href="valuation.html"]:focus-visible,
+.page-hero a.btn.solid[href="valuation.html"]:hover,
+.page-hero a.btn.solid[href="valuation.html"]:focus-visible,
+.band.ink a.btn.solid[href="valuation.html"]:hover,
+.band.ink a.btn.solid[href="valuation.html"]:focus-visible,
+.cta-bar a.btn.solid[href="valuation.html"]:hover,
+.cta-bar a.btn.solid[href="valuation.html"]:focus-visible,
+.hero-photo a.btn[href="contact.html"]:hover,
+.hero-photo a.btn[href="contact.html"]:focus-visible,
+.page-hero a.btn[href="contact.html"]:hover,
+.page-hero a.btn[href="contact.html"]:focus-visible,
+.band.ink a.btn[href="contact.html"]:hover,
+.band.ink a.btn[href="contact.html"]:focus-visible,
+.cta-bar a.btn[href="contact.html"]:hover,
+.cta-bar a.btn[href="contact.html"]:focus-visible {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0d0d0d;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+@supports not ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+  a.btn.solid[href="valuation.html"] { background: rgba(13, 13, 13, 0.92); }
+  a.btn[href="contact.html"] { background: rgba(13, 13, 13, 0.08); }
+  .hero-photo a.btn.solid[href="valuation.html"],
+  .page-hero a.btn.solid[href="valuation.html"],
+  .band.ink a.btn.solid[href="valuation.html"],
+  .cta-bar a.btn.solid[href="valuation.html"] {
+    background: rgba(13, 13, 13, 0.78);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+  .hero-photo a.btn[href="contact.html"],
+  .page-hero a.btn[href="contact.html"],
+  .band.ink a.btn[href="contact.html"],
+  .cta-bar a.btn[href="contact.html"] {
+    background: rgba(13, 13, 13, 0.62);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
 @media (max-width: 960px) {
   .hero-photo { min-height: calc(100svh - 150px); }
   .hero-scrim { padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
