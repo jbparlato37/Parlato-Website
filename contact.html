@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact | Parlato Real Estate</title>
+  <meta name="description" content="Contact Justin Parlato at Parlato Real Estate in Fishers, Indiana.">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- [CONFIRM DOMAIN] Replace this relative canonical with the absolute URL before publication. -->
+  <link rel="canonical" href="contact.html">
+  <meta property="og:title" content="Contact | Parlato Real Estate">
+  <meta property="og:description" content="Contact Justin Parlato at Parlato Real Estate in Fishers, Indiana.">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="fonts/libre-franklin-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bodoni-moda-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <div class="review-banner">
+    <div class="wrap">Review preview. Not for publication. Items marked [CONFIRM] need review before launch.</div>
+  </div>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Parlato Real Estate home">
+        <span class="logo-plate">
+          <img src="images/logo-15a-black.png" alt="Parlato Real Estate" width="640" height="250">
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="insights.html">Insights</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="contact.html" aria-current="page">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
+      </nav>
+    </div>
+  </header>
+<main id="main">
+
+    <section class="hero-photo banner" aria-labelledby="contact-hero">
+      <!-- [PLACEHOLDER PHOTO: replace with Parlato photography] -->
+      <img class="hero-img" src="images/banner-indy-monument-1280.webp" srcset="images/banner-indy-monument-800.webp 800w, images/banner-indy-monument-1280.webp 1280w, images/banner-indy-monument-1920.webp 1920w" sizes="100vw" alt="Monument Circle in downtown Indianapolis at night, a placeholder photograph" width="1920" height="1281" fetchpriority="high" decoding="async">
+      <div class="hero-scrim">
+        <div class="wrap hero-copy">
+          <p class="eyebrow">Contact</p>
+          <h1 id="contact-hero">Let's talk about your property.</h1>
+          <p class="lede">Tell us what you own or what you are looking for. You will hear back from Justin directly.</p>
+        </div>
+      </div>
+    </section>
+    <section class="band ink" id="valuation" aria-labelledby="contact-h">
+      <div class="wrap contact">
+        <div class="card-info">
+          <!-- [PLACEHOLDER PHOTO: replace with Parlato photography] -->
+          <img class="slot-photo" src="images/tile-suite-1280.webp" srcset="images/tile-suite-800.webp 800w, images/tile-suite-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 40vw" alt="Empty office interior, a placeholder photograph, not the Parlato office" width="1280" height="854" loading="lazy" decoding="async">
+          <h2 id="contact-h">The office.</h2>
+          <dl class="info">
+            <div>
+              <dt>Phone</dt>
+              <dd><a href="tel:+13179819115">317-981-9115</a></dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd>
+                <a href="mailto:jbparlato@gmail.com">jbparlato@gmail.com</a>
+                <span class="confirm">[CONFIRM: Parlato email address, to replace the personal Gmail]</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Office</dt>
+              <dd>12175 Visionary Way<br>Fishers, IN 46038</dd>
+            </div>
+          </dl>
+          <p class="note">[CONFIRM: LinkedIn, Instagram, Facebook and X profile URLs before adding public links.]</p>
+        </div>
+        <!--
+          Lead form. This preview posts to /api/contact, which stays unconfigured until the env vars in README are set.
+          Future option: monday WorkForms or a webhook, after Joseph approves that connection.
+          Map the interest values to a monday status column when that day comes.
+        -->
+        <form id="inquiry" action="/api/contact" method="post" novalidate>
+          <div class="hp" aria-hidden="true">
+            <label for="company_website">Company website
+              <input id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+          <label for="f-name">Full name
+            <input id="f-name" name="name" autocomplete="name" required>
+          </label>
+          <div class="row">
+            <label for="f-email">Email
+              <input type="email" id="f-email" name="email" autocomplete="email" required>
+            </label>
+            <label for="f-phone">Phone
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" required>
+            </label>
+          </div>
+          <label for="f-interest">Interest
+            <select id="f-interest" name="interest" required>
+              <option>Sell a property</option>
+              <option>Buy a property</option>
+              <option>Lease space</option>
+              <option>Find tenants</option>
+              <option>Get notified of new offerings</option>
+              <option>General inquiry</option>
+            </select>
+          </label>
+          <label for="f-addr">Property address, optional
+            <input id="f-addr" name="address" autocomplete="street-address">
+          </label>
+          <label for="f-msg">
+            <span id="msg-l">Message</span>
+            <textarea id="f-msg" name="message" required></textarea>
+          </label>
+          <div id="turnstile"></div>
+          <label class="consent" for="f-consent">
+            <input type="checkbox" id="f-consent" name="consent" required>
+            <span>I agree to be contacted by Parlato Real Estate about this inquiry.</span>
+          </label>
+          <div>
+            <button class="btn solid" type="submit">Send inquiry <span class="arrow" aria-hidden="true"></span></button>
+          </div>
+          <p class="preview-note static" id="formPreview">Preview only, not connected. This form is not linked to an inbox yet. Nothing will be sent.</p>
+          <p class="form-msg" hidden id="formMsg" tabindex="-1"></p>
+        </form>
+      </div>
+    </section>
+
+</main>
+<!-- Sitemap: index.html, about.html, services.html, insights.html, listings.html, sold.html, valuation.html, contact.html, 404.html -->
+<footer class="foot">
+    <div class="wrap">
+      <div class="foot-brand">
+        <img src="images/logo-15a-name-only-white.png" alt="Parlato" width="520" height="135">
+        <p class="foot-line">Advisors to owners of Indiana real estate.</p>
+      </div>
+      <div class="foot-top">
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="insights.html">Insights</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <a class="foot-worth" href="valuation.html">What's my property worth?</a>
+      </div>
+      <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
+      <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
+    </div>
+  </footer>
+  <div class="cta-bar" role="region" aria-label="Quick actions">
+    <a class="btn" href="contact.html">Contact</a>
+    <a class="btn solid" href="valuation.html">What's my property worth?</a>
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

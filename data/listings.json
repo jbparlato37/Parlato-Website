@@ -1,0 +1,18 @@
+[
+  {
+    "id": "riverbend-commons",
+    "name": "Riverbend Commons",
+    "city": "Indianapolis",
+    "address": "4410 E 10th Street, Indianapolis, IN 46201",
+    "lat": 39.78,
+    "lng": -86.15,
+    "assetType": "Multifamily",
+    "size": "48 units",
+    "price": "Price: sample",
+    "status": "Illustrative sample",
+    "photo": "images/sample-listing-riverbend-commons.jpg",
+    "dealRoomUrl": "",
+    "illustrative": true,
+    "note": "Illustrative sample. Not a live listing."
+  }
+]

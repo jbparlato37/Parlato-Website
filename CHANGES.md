@@ -1,5 +1,29 @@
 # Parlato Real Estate website, version 3
 
+## November 9 update: pages, not one scroll
+
+The site is now separate pages. Navigation order is About, Services, Insights, Listings, Sold, Contact. Home is a short photo-led overview.
+
+- Call buttons now read Contact and open `contact.html`. There is no large phone-number button. The number stays a small text link on the contact page and in the footer.
+- "Request a Valuation" now reads "What's my property worth?" and opens `valuation.html`, a separate owner form. The contact form no longer offers that interest. The valuation email uses `CONTACT_TO_EMAIL` and a subject that starts "Valuation request". Intro and "what happens next" copy are marked [CONFIRM].
+- Removed the section "Built to find the buyer before the listing goes live," including its four supporting points.
+- Removed off-market wording: the off-market service card, the off-market listing card, "on- and off-market" in buyer representation, "on-market, off-market or both" in the process, "first look," "buyer list," "sell quietly," and "confidential offerings." The investor path now says "Get notified of new offerings."
+- In The problems we solve, the confidential-sale card was replaced with a public-marketing card. The other three cards are unchanged. The section is on the home page and on Services.
+- Core values on the home page are a draft. [CONFIRM: core values wording, drafted from brand guide words, needs Justin/Joseph approval]
+- About is a founder layout (centered heading, portrait beside the name, role line, credential rows). Longer bio sections are placeholder blocks, not new copy.
+- Listings uses one data file, a grayscale Leaflet map (OpenStreetMap raster tiles, no WebGL), and filterable cards. The map is the large sticky pane. The only record is the illustrative Riverbend Commons sample, and its price is shown as "Price: sample" so the figure is not read as a live asking price. Sold is an empty map plus an empty table.
+- The home hero still includes the flagged line "A founder on every deal." It is kept on purpose and listed under Claims flagged for verification.
+- The header is one translucent white bar, rgba(255, 255, 255, 0.7), with a 10px blur and a faint Rule Grey edge. On a photo hero the photograph starts under that bar. After a scroll the bar goes to 0.9 so type underneath stays quiet. The open mobile menu stays solid white. The logo and navigation stay black.
+- The home line "Commercial real estate brokerage, Central Indiana" is 18px on desktop and 15px on a phone, Libre Franklin 600, white, with a darker lower-left scrim and a soft shadow.
+- The hero scrim is lighter across the photograph and darkens toward the type in a soft falloff, with no hard edge. The portrait caption is frosted white. The mobile action bar is frosted black. Forms, the footer, and the map stay solid so the type stays readable.
+- The Contact and "What's my property worth?" links are frosted. Form submit buttons stay solid.
+- Design re-audit is in `DESIGN-AUDIT.md`. About, Contact, and Valuation open on a short photograph. Listing cards are photo first. An empty Sold page does not draw a map or a building photograph. The Services page no longer repeats the same photograph in one view.
+- Photo spots stay marked [PLACEHOLDER PHOTO: replace with Parlato photography] and are credited in `images/CREDITS.md`. The home hero, the downtown banner, and the grid banner are Joseph Surak's own Indianapolis aerials, not stock. The grid crop keeps the street grid and keeps the stadium and team signage from dominating. Monument Circle and the other tiles stay licensed stand-ins. The headshot stays grayscale.
+- The contact form posts to `functions/api/contact.js`. With no env vars it returns "not configured," and the page shows "Preview only, not connected."
+
+# Archive: version 3 notes
+
+
 Review preview dated Nov 9, 2026 (America/Indianapolis). Built from the new site draft and the Nov 9, 2026 brand guidelines Joseph sent. Nothing in this folder has been published or shared publicly.
 
 The new draft is the base for content and structure. Useful pieces from the earlier v2 preview were reused: self-hosted fonts, JSON-LD, accessibility patterns, the preview-only form treatment, Call and Request a Valuation CTAs, and the placeholder convention.
@@ -13,6 +37,7 @@ The new draft is the base for content and structure. Useful pieces from the earl
 - Added title, meta description, Open Graph tags, a `noindex` robots tag until publication is approved, and JSON-LD for Organization, RealEstateAgent, and Person. Canonical and social URLs are omitted until [CONFIRM DOMAIN] is set, because an invalid placeholder URL fails SEO checks.
 - Accessibility work includes a skip link, landmarks, labels on every input, visible focus, reduced-motion support, and WCAG AA contrast on the live palette. Right-arrow characters in buttons and links were replaced with a CSS chevron so copy does not use dash-like glyphs.
 - Added a Call CTA (`tel:317-981-9115`) next to Request a Valuation in the header, hero, process, founder section, and a sticky mobile bar.
+- Call buttons in the header, hero, process, founder section, and sticky mobile bar now say Contact and link to #contact. The sticky bar text is white so the outline button stays readable on black. Phone numbers shown as numbers stay tel: links.
 - The lead form and the e-blast signup show a visible "Preview only, not connected" notice. Submit still does not send data. HTML comments describe the monday WorkForms or webhook swap-in. Consent checkboxes were added. Phone and email in the contact block are now links.
 - The market-report "Download PDF" button was removed because the linked file is not in the repo and the draft already said the first edition is coming soon. The e-blast signup remains the way to request the report. Generic LinkedIn, Instagram, Facebook, and X homepage links were removed and marked [CONFIRM] until real profile URLs are supplied.
 - Three Verti CRE press items from the draft were removed from the visible page and replaced with an empty template. See "Decisions for Joseph" below.
@@ -107,5 +132,5 @@ The SEO deduction is the intentional `noindex, nofollow` robots tag, which Light
 
 ## Local preview files
 
-- `/workspace/parlato-repo/previews/preview-desktop.png` (1280px wide, full page)
-- `/workspace/parlato-repo/previews/preview-mobile.png` (390px wide, full page)
+- `previews/home-desktop.png` and `previews/preview-desktop.png` (1280px wide, full home page)
+- `previews/home-mobile.png` and `previews/preview-mobile.png` (390px wide, full home page)
