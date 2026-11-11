@@ -1,3 +1,49 @@
+# Parlato Real Estate website, version 4
+
+Search and AI-search positioning pass dated Nov 11, 2026, requested by Justin. Built on version 3. Nothing has been published. The `noindex` tag is still in place.
+
+## Goal
+
+Position Parlato Real Estate and Justin Parlato in web search and in AI assistant answers for Central Indiana multifamily and commercial brokerage. Lead with multifamily investment sales and valuations for private owners. Industrial, retail, land and leasing stay as secondary services.
+
+## What changed versus version 3
+
+- All copy was rewritten to be answer-first and specific: who the firm is, what it does, for whom, and where. The old wording is in git history.
+- Title tag is now "Indianapolis Multifamily and Commercial Real Estate Broker | Parlato". The H1 is "Multifamily and commercial brokerage for Indianapolis owners." The brand-guide example headline "Advisors to owners of Indiana real estate" carried no service or city term. The guide line "Straight numbers, institutional marketing, and a founder on every deal" stays in the hero.
+- New FAQ section with nine questions owners ask, mirrored in FAQPage JSON-LD and in `llms.txt`. Edit all three together.
+- New "Property types and markets" section naming four property types and nine counties with their cities.
+- JSON-LD expanded: description, service catalog, county-level areaServed, founder description, FAQPage.
+- New `llms.txt` (plain-text summary for AI assistants) and `robots.txt` (allows all crawlers).
+- Section order now puts the owner's problems ahead of the firm.
+- Hero has two buttons instead of three and a shorter headline so both buttons sit above the fold.
+- Fixed the phone sticky bar, where the Call button was black on black.
+- Hidden until real content exists, with templates left in HTML comments: the Riverbend Commons sample listing, the empty Sold table, the LinkedIn list, and the press list. The Listings and Sold nav links were replaced by Markets, Buyers and FAQ.
+- New metrics band under "The firm" with visible placeholders. "00" is not a figure.
+- Testimonials template added as an HTML comment only.
+- Property type on the form no longer defaults to Multifamily. The buy box prompt now asks for return target and cash or financed.
+
+## Copy decisions to confirm
+
+- "Representation on every side of the transaction" became "One side per deal". The FAQ says Indiana law requires written consent from both parties before a broker acts for both. Have the managing broker confirm that wording.
+- "Every assignment gets full underwriting..." became "Every sale assignment...".
+- Broker Opinion of Value is now tagged "Owners", not "Owners and lenders". The FAQ says a lender will usually require an appraisal.
+- "First look" for buyers was removed. It conflicted with the promise of full buyer exposure for sellers.
+- Valuation copy now says value starts from the rent roll and trailing 12 months, with taxes, insurance and management set to what the likely buyer will carry, and pro forma upside shown separately.
+- The property tax FAQ states the January 1 assessment date and the 2% and 3% caps as general information, not tax advice. Confirm before launch.
+
+## New placeholders
+
+- [CONFIRM: service area counties and cities]. Marion, Hamilton, Hendricks, Johnson, Boone, Hancock, Morgan, Shelby and Madison are listed.
+- [CONFIRM: number] for years in commercial real estate and for Central Indiana sales tracked in-house.
+- Valuation cost and turnaround time are not stated anywhere. Adding both to the FAQ would help.
+- Real testimonials, closed deals and a live listing, when they exist.
+
+## Still open from version 3
+
+Domain, Parlato email address, license number, sponsoring broker disclosure, social profile URLs, email platform and cadence, monday connection, gold value. See the version 3 notes below.
+
+---
+
 # Parlato Real Estate website, version 3
 
 Review preview dated Nov 9, 2026 (America/Indianapolis). Built from the new site draft and the Nov 9, 2026 brand guidelines Joseph sent. Nothing in this folder has been published or shared publicly.

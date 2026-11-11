@@ -1,0 +1,7 @@
+# Parlato Real Estate
+# Search engines and AI assistants are welcome. The page itself carries a noindex tag until launch.
+User-agent: *
+Allow: /
+
+# Add after the domain is confirmed:
+# Sitemap: https://[CONFIRM DOMAIN]/sitemap.xml

@@ -32,7 +32,7 @@
     ],
     Buy: [
       "Your buy box",
-      "Asset type, unit count or SF range, price range, target submarkets, 1031 timing if any"
+      "Asset type, unit count or SF range, price range, target submarkets, return target, cash or financed, 1031 timing if any"
     ],
     "Lease space": [
       "Space requirements",
