@@ -169,7 +169,7 @@ Justin decided no sample offering memorandum is needed. The image and its "Sampl
 Justin asked for current listings, sold and market reports pages.
 
 - New `listings.html`, `sold.html` and `market-reports.html`, each with its own title, description and `noindex, nofollow`. They share the home page header, footer, fonts and colors.
-- All three are honest empty states. No sample or invented listing, deal or report. Templates for a listing card, a sold row and a report entry are in HTML comments on each page.
+- Each page shows visible placeholders: one listing card, three Sold rows and one report entry. They are labeled "Placeholder" or [CONFIRM], use "00" style values like the metrics band, and name no real or invented property. Replace them before launch. Templates for a listing card, a sold row and a report entry are in HTML comments on each page.
 - Header nav is now Services, Listings, Sold, Market Reports, About, FAQ. Markets and Buyers moved to the footer only. The phone menu now starts at 1140 px instead of 960 px so the longer nav does not wrap on laptops.
 - Home page: "Current Listings" button in the Buyers band, "All Market Reports" button in the Insights panel.
 - `llms.txt` lists the pages.

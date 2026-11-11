@@ -1045,3 +1045,9 @@ input:focus, select:focus, textarea:focus {
 .report-list a { display: grid; gap: 8px; padding: 26px 0; text-decoration: none; color: var(--black); }
 .report-list .d { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
 .report-list a:hover h3 { color: var(--navy); }
+.listing.placeholder .ph { aspect-ratio: 4 / 3; background: var(--stone); border-bottom: 1px solid var(--rule); }
+.listing .note { color: var(--black); }
+.tbl-note { font-size: 0.9rem; color: var(--black); margin-bottom: 18px; }
+.tbl tr.placeholder td { color: var(--black); }
+.report-list .entry { display: grid; gap: 8px; padding: 26px 0; color: var(--black); }
+.report-list .entry p { max-width: 65ch; }
