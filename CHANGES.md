@@ -108,7 +108,7 @@ These claims were kept from the draft. They are noted in HTML comments and in th
 - License: Indiana Real Estate Broker and Managing Broker (no license number was in the draft or the guide).
 - Planned publication of the market report, including a possible LinkedIn edition.
 
-No track record counts, testimonials, or dollar figures were invented. The Riverbend Commons figures and the sample offering memorandum remain labeled illustrative.
+No track record counts, testimonials, or dollar figures were invented. The Riverbend Commons figures remain labeled illustrative.
 
 ## Placeholders Joseph needs to fill
 
@@ -159,3 +159,7 @@ The SEO deduction is the intentional `noindex, nofollow` robots tag, which Light
 
 - `/workspace/parlato-repo/previews/preview-desktop.png` (1280px wide, full page)
 - `/workspace/parlato-repo/previews/preview-mobile.png` (390px wide, full page)
+
+## Sample offering memorandum removed, 11.11.2026
+
+Justin decided no sample offering memorandum is needed. The image and its "Sample work" panel were removed from the Insights section, and `images/sample-om.jpg` was deleted. The market report panel now spans the section. If marketing quality needs proof later, use a page from a real Parlato offering memorandum the client has approved.

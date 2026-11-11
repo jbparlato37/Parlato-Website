@@ -669,9 +669,6 @@ p { margin: 0; }
 @media (max-width: 480px) { .creds li { grid-template-columns: 1fr; gap: 4px; } }
 
 /* Insights */
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.two > * { min-width: 0; }
-@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
 .panel {
   border: 1px solid var(--rule);
   background: var(--white);
@@ -680,8 +677,6 @@ p { margin: 0; }
   gap: 16px;
   align-content: start;
 }
-.panel.sample { padding: 0; border: 0; background: transparent; gap: 12px; }
-.panel.sample img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
 .report {
   background: var(--navy);
   color: var(--white);
@@ -690,7 +685,7 @@ p { margin: 0; }
   overflow: hidden;
 }
 .report .eyebrow { color: var(--white); }
-.report p { color: var(--white); }
+.report p { color: var(--white); max-width: 65ch; }
 .report .note { color: var(--white); }
 
 .li-head {

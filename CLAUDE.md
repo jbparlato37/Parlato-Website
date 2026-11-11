@@ -103,7 +103,7 @@ If a fact is unverified, either:
 - Show a visible `[CONFIRM: ...]` placeholder, or
 - Leave a clearly labeled template or empty state (for example the Sold table and the press list).
 
-The Riverbend Commons card is an illustrative sample. The sample offering memorandum is illustrative. Do not present either as a live listing or a real deal.
+The Riverbend Commons card is an illustrative sample. Do not present it as a live listing or a real deal. Do not add a sample offering memorandum; Justin decided none is needed.
 
 A current list of flagged claims and placeholders is in `CHANGES.md`. Update that list when you add or resolve one.
 

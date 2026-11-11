@@ -23,7 +23,7 @@ There is no build step. Forms show a "preview only, not connected" notice and do
 - `index.html` is the single-page site.
 - `css/styles.css` and `js/main.js` are the styles and behavior.
 - `fonts/` holds self-hosted Bodoni Moda and Libre Franklin woff2 files (no Google Fonts request at runtime).
-- `images/` holds the 15a logos from the Nov 9 draft, a grayscale founder headshot, the sample offering memorandum, and the labeled sample listing illustration.
+- `images/` holds the 15a logos from the Nov 9 draft, a grayscale founder headshot, and the labeled sample listing illustration.
 - `CLAUDE.md` is the collaboration guide for anyone editing this repo, including Claude.
 - `CHANGES.md` lists what changed versus the Nov 9 draft, brand compliance notes, flagged claims, and placeholders.
 - `previews/` holds desktop and mobile full-page screenshots from this review.
