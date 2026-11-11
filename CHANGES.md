@@ -50,7 +50,7 @@ Noted in HTML comments.
 - In-house owner, buyer and sales records for Central Indiana.
 - Background in multifamily investment sales, real estate development and his own investment deals.
 - Education: Real Estate and Marketing, Kelley School of Business, IU Indianapolis.
-- Core values wording (Disruptive, Creative, Resilient, Gritty, Trustworthy, Service minded). Drafted from brand guide words. "Disruptive" and "Gritty" may read as edgy against the voice rules.
+- Core values wording. Reworded on Nov 11, 2026 at Justin's request so none reads as edgy: Straight numbers, Owner first, Practical, Built for the property, Thorough, Steady to closing. The earlier draft was Disruptive, Creative, Resilient, Gritty, Trustworthy, Service minded.
 - Have the managing broker confirm two FAQ answers: Indiana written consent from both parties before a broker acts for both, and the property tax answer (January 1 assessment date, 2% and 3% caps).
 
 No track record counts, testimonials, deals or dollar figures were invented.
