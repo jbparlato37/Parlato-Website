@@ -6,7 +6,11 @@
   <title>Closed Multifamily and Commercial Sales, Central Indiana | Parlato</title>
   <meta name="description" content="Closed multifamily and commercial transactions by Parlato Real Estate in Indianapolis and Central Indiana.">
   <meta name="robots" content="noindex, nofollow">
-  <!-- Remove the robots noindex tag and add a canonical URL once the domain is confirmed and publication is approved. -->
+  <!-- [CONFIRM DOMAIN] Remove noindex and add an absolute canonical URL and Open Graph URL tags only after publication is approved. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Parlato Real Estate">
+  <meta property="og:title" content="Closed Multifamily and Commercial Sales, Central Indiana | Parlato">
+  <meta property="og:description" content="Closed multifamily and commercial transactions by Parlato Real Estate in Indianapolis and Central Indiana.">
   <meta name="theme-color" content="#0D0D0D">
   <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
@@ -15,11 +19,10 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to main content</a>
   <div class="review-banner">
     <div class="wrap">Review preview. Not for publication. Items marked [CONFIRM] need review before launch.</div>
   </div>
-
   <header class="site-head">
     <div class="wrap">
       <a class="logo" href="index.html" aria-label="Parlato Real Estate home">
@@ -29,126 +32,68 @@
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="index.html#services">Services</a>
-        <a href="listings.html">Listings</a>
-        <a href="sold.html" aria-current="page">Sold</a>
-        <a href="market-reports.html">Market Reports</a>
-        <a href="index.html#founder">About</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="tel:+13179819115">Call</a>
-        <a class="btn solid" href="index.html#contact">Request a Valuation</a>
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html" aria-current="page">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
       </nav>
     </div>
   </header>
+<main id="main">
 
-  <main id="main">
-    <section class="band ink page-intro" aria-labelledby="page-h">
+    <section class="page-hero">
       <div class="wrap">
-        <div class="head">
-          <p class="eyebrow">Sold</p>
-          <h1 id="page-h">Closed transactions.</h1>
-          <p class="lede">Every sale Parlato Real Estate has closed, with property, size, market, price where the client allows, closing date and the side represented.</p>
-        </div>
+        <p class="eyebrow">Sold</p>
+        <h1>Closed transactions.</h1>
+        <p class="lede">Sales Parlato Real Estate has closed, with property, size, market, price where the client allows, closing date and the side represented.</p>
       </div>
     </section>
-
-    <section class="band" aria-labelledby="closed-h">
+    <section class="band" aria-labelledby="sold-h">
       <div class="wrap">
         <div class="head">
-          <h2 id="closed-h">On the record.</h2>
+          <h2 id="sold-h">On the record.</h2>
         </div>
         <!--
-          Empty on purpose. Add a row only for a real, closed transaction that Joseph has approved for publication.
+          Add a row only for a real, closed transaction that Joseph has approved for publication. Replace the placeholder rows.
           [CONFIRM: whether deals Justin worked before founding Parlato may be listed, or need his current broker's approval.]
           Newest first. Price only where the client allows; otherwise write "Confidential".
-          Row template:
-          <tr>
-            <td data-label="Property">Property name</td>
-            <td data-label="Type">Multifamily</td>
-            <td data-label="Size">00 units</td>
-            <td data-label="Market">City, County</td>
-            <td data-label="Price">$0.00M</td>
-            <td data-label="Closed">Month 2027</td>
-            <td data-label="Represented">Seller</td>
-          </tr>
-          When rows exist, add totals (transactions, units, dollar volume) above the table.
+          When real rows exist, add totals (transactions, units, dollar volume) above the table, and add the same records
+          with coordinates to data/sold.json to show them on a map.
         -->
         <p class="tbl-note">Placeholder rows. Not real transactions. <span class="confirm">[CONFIRM: closed deals approved for publication]</span></p>
         <div class="tbl">
           <table>
             <thead>
               <tr>
-                <th>Property</th>
-                <th>Type</th>
-                <th>Size</th>
-                <th>Market</th>
-                <th>Price</th>
-                <th>Closed</th>
-                <th>Represented</th>
+                <th>Property</th><th>Type</th><th>Size</th><th>Market</th><th>Price</th><th>Closed</th><th>Represented</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="placeholder">
-                <td>Property name</td>
-                <td>Type</td>
-                <td>00 units</td>
-                <td>City, County</td>
-                <td>$0.00M</td>
-                <td>Month 0000</td>
-                <td>Seller</td>
-              </tr>
-              <tr class="placeholder">
-                <td>Property name</td>
-                <td>Type</td>
-                <td>00 units</td>
-                <td>City, County</td>
-                <td>$0.00M</td>
-                <td>Month 0000</td>
-                <td>Seller</td>
-              </tr>
-              <tr class="placeholder">
-                <td>Property name</td>
-                <td>Type</td>
-                <td>00 units</td>
-                <td>City, County</td>
-                <td>$0.00M</td>
-                <td>Month 0000</td>
-                <td>Seller</td>
-              </tr>
+              <tr class="placeholder"><td>Property name</td><td>Type</td><td>00 units</td><td>City, County</td><td>$0.00M</td><td>Month 0000</td><td>Seller</td></tr>
+              <tr class="placeholder"><td>Property name</td><td>Type</td><td>00 units</td><td>City, County</td><td>$0.00M</td><td>Month 0000</td><td>Seller</td></tr>
+              <tr class="placeholder"><td>Property name</td><td>Type</td><td>00 units</td><td>City, County</td><td>$0.00M</td><td>Month 0000</td><td>Seller</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-  </main>
-
-  <footer class="foot">
+</main>
+<footer class="foot">
     <div class="wrap">
-      <div class="foot-top">
+      <div class="foot-brand">
         <img src="images/logo-15a-name-only-white.png" alt="Parlato" width="520" height="135">
-        <nav aria-label="Footer">
-          <a href="index.html#services">Services</a>
-          <a href="index.html#markets">Markets</a>
-          <a href="listings.html">Listings</a>
-          <a href="sold.html">Sold</a>
-          <a href="market-reports.html">Market Reports</a>
-          <a href="index.html#buyers">Buyers</a>
-          <a href="index.html#founder">About</a>
-          <a href="index.html#faq">FAQ</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
+        <p class="foot-line">Advisors to owners of Indiana real estate.</p>
       </div>
-      <small>Parlato Real Estate · Commercial real estate brokerage · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
-      <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Founder, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
+      <div class="foot-top">
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <a class="foot-worth" href="valuation.html">What's my property worth?</a>
+      </div>
+      <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
+      <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
     </div>
   </footer>
-
   <div class="cta-bar" role="region" aria-label="Quick actions">
-    <a class="btn" href="tel:+13179819115">Call</a>
-    <a class="btn solid" href="index.html#contact">Request a Valuation</a>
+    <a class="btn" href="contact.html">Contact</a>
+    <a class="btn solid" href="valuation.html">What's my property worth?</a>
   </div>
-
   <script src="js/main.js" defer></script>
 </body>
 </html>

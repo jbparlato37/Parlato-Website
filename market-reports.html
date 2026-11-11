@@ -6,7 +6,11 @@
   <title>Central Indiana Multifamily and Commercial Market Reports | Parlato</title>
   <meta name="description" content="Free market reports on multifamily and commercial sales, pricing and rents across Indianapolis and Central Indiana.">
   <meta name="robots" content="noindex, nofollow">
-  <!-- Remove the robots noindex tag and add a canonical URL once the domain is confirmed and publication is approved. -->
+  <!-- [CONFIRM DOMAIN] Remove noindex and add an absolute canonical URL and Open Graph URL tags only after publication is approved. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Parlato Real Estate">
+  <meta property="og:title" content="Central Indiana Multifamily and Commercial Market Reports | Parlato">
+  <meta property="og:description" content="Free market reports on multifamily and commercial sales, pricing and rents across Indianapolis and Central Indiana.">
   <meta name="theme-color" content="#0D0D0D">
   <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
@@ -15,11 +19,10 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to main content</a>
   <div class="review-banner">
     <div class="wrap">Review preview. Not for publication. Items marked [CONFIRM] need review before launch.</div>
   </div>
-
   <header class="site-head">
     <div class="wrap">
       <a class="logo" href="index.html" aria-label="Parlato Real Estate home">
@@ -29,25 +32,19 @@
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="index.html#services">Services</a>
-        <a href="listings.html">Listings</a>
-        <a href="sold.html">Sold</a>
-        <a href="market-reports.html" aria-current="page">Market Reports</a>
-        <a href="index.html#founder">About</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="tel:+13179819115">Call</a>
-        <a class="btn solid" href="index.html#contact">Request a Valuation</a>
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html" aria-current="page">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
       </nav>
     </div>
   </header>
+<main id="main">
 
-  <main id="main">
-    <section class="band ink page-intro" aria-labelledby="page-h">
-      <div class="wrap">
-        <div class="head">
+    <section class="hero-photo short" aria-labelledby="rep-hero">
+      <img class="hero-img" src="images/banner-indy-grid-1920.webp" srcset="images/banner-indy-grid-800.webp 800w, images/banner-indy-grid-1280.webp 1280w, images/banner-indy-grid-1920.webp 1920w" sizes="100vw" alt="Aerial view of the downtown Indianapolis street grid" width="1920" height="420" fetchpriority="high" decoding="async">
+      <div class="hero-scrim">
+        <div class="wrap hero-copy">
           <p class="eyebrow">Market Reports</p>
-          <h1 id="page-h">Central Indiana market reports.</h1>
-          <p class="lede">Multifamily and commercial sales, pricing and rents across Indianapolis and Central Indiana, by submarket. Free to read. Each report states its date, data source and author.</p>
+          <h1 id="rep-hero">Central Indiana market reports.</h1>
+          <p class="lede">Multifamily and commercial sales, pricing and rents across Indianapolis and Central Indiana, by submarket. Free to read.</p>
         </div>
       </div>
     </section>
@@ -56,16 +53,17 @@
       <div class="wrap">
         <div class="head">
           <h2 id="rep-h">Reports.</h2>
+          <p class="lede">Each report states its date, data source and author.</p>
         </div>
         <!--
           REPORT LIST. Publish each report as its own page, for example reports/2027-q1-central-indiana-multifamily.html,
           with a date, the data source, the author and a short method note. Original local data is what search engines
-          and AI assistants cite. Never publish figures that are not sourced. Newest first.
-          Row template:
-          <li><a href="reports/FILE.html"><span class="d">Q1 2027</span><h3>Report title</h3><p>One line on what the report covers.</p></a></li>
+          and AI assistants cite. Never publish figures that are not sourced. Newest first. Replace the placeholder entry.
+          Entry template:
+          <li><a class="entry" href="reports/FILE.html"><span class="d">Q1 2027</span><h3>Report title</h3><p>One line on what the report covers.</p></a></li>
         -->
         <ul class="report-list">
-          <li class="placeholder">
+          <li>
             <div class="entry">
               <span class="d"><span class="confirm">[CONFIRM: publication date]</span></span>
               <h3>Central Indiana multifamily market report</h3>
@@ -73,7 +71,7 @@
             </div>
           </li>
         </ul>
-
+        <!-- LinkedIn posts and press lists stay hidden until there are real items. [CONFIRM: LinkedIn profile or company page URL.] Press must be about Parlato Real Estate and approved. -->
         <form class="subscribe" id="subscribe" novalidate>
           <!-- E-blast signup. [CONFIRM: email platform] and [CONFIRM: cadence]. Not connected in this preview. -->
           <div class="sub-copy">
@@ -97,34 +95,25 @@
       </div>
     </section>
 
-  </main>
-
-  <footer class="foot">
+</main>
+<footer class="foot">
     <div class="wrap">
-      <div class="foot-top">
+      <div class="foot-brand">
         <img src="images/logo-15a-name-only-white.png" alt="Parlato" width="520" height="135">
-        <nav aria-label="Footer">
-          <a href="index.html#services">Services</a>
-          <a href="index.html#markets">Markets</a>
-          <a href="listings.html">Listings</a>
-          <a href="sold.html">Sold</a>
-          <a href="market-reports.html">Market Reports</a>
-          <a href="index.html#buyers">Buyers</a>
-          <a href="index.html#founder">About</a>
-          <a href="index.html#faq">FAQ</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
+        <p class="foot-line">Advisors to owners of Indiana real estate.</p>
       </div>
-      <small>Parlato Real Estate · Commercial real estate brokerage · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
-      <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Founder, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
+      <div class="foot-top">
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <a class="foot-worth" href="valuation.html">What's my property worth?</a>
+      </div>
+      <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
+      <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
     </div>
   </footer>
-
   <div class="cta-bar" role="region" aria-label="Quick actions">
-    <a class="btn" href="tel:+13179819115">Call</a>
-    <a class="btn solid" href="index.html#contact">Request a Valuation</a>
+    <a class="btn" href="contact.html">Contact</a>
+    <a class="btn solid" href="valuation.html">What's my property worth?</a>
   </div>
-
   <script src="js/main.js" defer></script>
 </body>
 </html>

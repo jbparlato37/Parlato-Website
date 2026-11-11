@@ -1,0 +1,18 @@
+[
+  {
+    "id": "placeholder-listing",
+    "name": "Placeholder listing",
+    "city": "Indianapolis",
+    "address": "",
+    "lat": 39.7684,
+    "lng": -86.1581,
+    "assetType": "Multifamily",
+    "size": "00 units",
+    "price": "$0.00M",
+    "status": "Placeholder",
+    "photo": "",
+    "dealRoomUrl": "",
+    "illustrative": true,
+    "note": "Placeholder. Not a real property. Replace with a live listing before launch."
+  }
+]

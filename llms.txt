@@ -8,17 +8,20 @@ Parlato Real Estate is a commercial real estate brokerage in Fishers, Indiana, f
 
 - Seller representation: Pricing from your rent roll and trailing 12 months, an offering memorandum, direct buyer outreach, negotiation and due diligence management through closing.
 - Broker Opinion of Value: A written estimate of likely sale price, built on actual operations, rent comps and recent sales. Pro forma upside is shown separately from today's value.
-- Off-market sales: A confidential sale to vetted buyers when a public listing does not serve the owner. Tenants, staff and competitors do not see a sign or a listing.
-- Buyer representation: We source on-market and off-market properties that fit your buy box, underwrite them and negotiate on your behalf.
+- Buyer representation: We source properties that fit your buy box, underwrite them and negotiate on your behalf.
 - Tenant representation: Site search and lease negotiation that puts you on equal footing with the landlord.
 - Landlord leasing: Marketing vacant space, qualifying prospects and negotiating leases at market rent.
 
 ## Pages
 
-- Home (index.html): services, property types and service area, process, the founder, FAQ and contact.
-- Listings (listings.html): current multifamily and commercial properties for sale or lease. No public listings at the moment.
+- Home (index.html): what the firm does, owner problems, how a sale is priced, property types and service area, and common questions.
+- Services (services.html): seller representation, Broker Opinion of Value, buyer representation, tenant representation, landlord leasing, and the five-step sale process.
+- About (about.html): Justin Parlato, founder, and the firm.
+- Market Reports (market-reports.html): Central Indiana sales, pricing and rents by submarket, each with date, data source and author. The first edition is in progress.
+- Listings (listings.html): multifamily and commercial properties for sale or lease, with a map. No live listings yet.
 - Sold (sold.html): closed transactions with property, size, market, price where the client allows, closing date and side represented. None published yet.
-- Market reports (market-reports.html): Central Indiana sales, pricing and rents by submarket, each with date, data source and author. The first edition is in progress.
+- Valuation (valuation.html): request a written Broker Opinion of Value.
+- Contact (contact.html): phone, office address and inquiry form.
 
 ## Property types
 
@@ -66,10 +69,6 @@ We start with the rent roll and the trailing 12 months of income and expenses. W
 ### What should I send to get a valuation?
 
 A current rent roll and a trailing 12-month operating statement are enough to start. The most recent property tax bill, the insurance premium and a list of recent capital work make the number tighter. If you do not have clean statements, send what you have.
-
-### Should I sell on-market or off-market?
-
-On-market reaches the most buyers and usually creates the most competition on price. Off-market keeps the sale confidential from tenants, staff and competitors, and goes only to vetted buyers. Many owners start with a quiet release to a short list and widen it if needed. We lay out the trade-off for your property before you choose.
 
 ### Will my property taxes change after a sale in Indiana?
 

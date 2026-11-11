@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Broker Opinion of Value, Indianapolis Apartment and Commercial Property | Parlato</title>
+  <meta name="description" content="Request a written Broker Opinion of Value for an apartment building or commercial property in Indianapolis or Central Indiana.">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- [CONFIRM DOMAIN] Remove noindex and add an absolute canonical URL and Open Graph URL tags only after publication is approved. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Parlato Real Estate">
+  <meta property="og:title" content="Broker Opinion of Value, Indianapolis Apartment and Commercial Property | Parlato">
+  <meta property="og:description" content="Request a written Broker Opinion of Value for an apartment building or commercial property in Indianapolis or Central Indiana.">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="fonts/libre-franklin-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bodoni-moda-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <div class="review-banner">
+    <div class="wrap">Review preview. Not for publication. Items marked [CONFIRM] need review before launch.</div>
+  </div>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Parlato Real Estate home">
+        <span class="logo-plate">
+          <img src="images/logo-15a-black.png" alt="Parlato Real Estate" width="640" height="250">
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
+      </nav>
+    </div>
+  </header>
+<main id="main">
+
+    <section class="hero-photo banner" aria-labelledby="val-hero">
+      <!-- Joseph Surak's aerial photograph (see images/CREDITS.md). A city view, not a subject property. -->
+      <img class="hero-img" src="images/hero-indy-skyline-1280.webp" srcset="images/hero-indy-skyline-800.webp 800w, images/hero-indy-skyline-1280.webp 1280w, images/hero-indy-skyline-1920.webp 1920w" sizes="100vw" alt="Aerial view of the downtown Indianapolis skyline" width="1920" height="798" fetchpriority="high" decoding="async">
+      <div class="hero-scrim">
+        <div class="wrap hero-copy">
+          <p class="eyebrow">Valuation</p>
+          <h1 id="val-hero">What's my property worth?</h1>
+          <p class="lede">A written Broker Opinion of Value for your apartment building or commercial property, built from the rent roll, the trailing 12 months, rent comps and recent sales.</p>
+        </div>
+      </div>
+    </section>
+    <section class="band ink" aria-labelledby="val-h">
+      <div class="wrap contact">
+        <div class="card-info">
+          <h2 id="val-h">For owners.</h2>
+          <p>For owners in Indianapolis and Central Indiana deciding whether to sell, hold or refinance. A current rent roll and a trailing 12-month operating statement are enough to start. If you do not have clean statements, send what you have.</p>
+          <p class="note">A Broker Opinion of Value is not an appraisal and is not prepared under USPAP. <span class="confirm">[CONFIRM: cost and turnaround time]</span></p>
+          <div>
+            <p class="eyebrow">What happens next</p>
+            <ol class="next-steps">
+              <li>[CONFIRM: what happens after this form is sent.]</li>
+              <li>[CONFIRM: who replies, and how soon.]</li>
+              <li>[CONFIRM: what the owner receives.]</li>
+            </ol>
+          </div>
+          <p class="note">For anything else, use the <a href="contact.html">contact page</a>.</p>
+        </div>
+        <!--
+          Valuation form. Preview only, not connected. Nothing is sent.
+          When Joseph approves, connect monday WorkForms or a webhook. The email subject prefix "Valuation request" is suggested.
+        -->
+        <form id="valuation-form" novalidate>
+          <div class="hp" aria-hidden="true">
+            <label for="v-website">Company website
+              <input id="v-website" name="company_website" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+          <label for="v-name">Full name
+            <input id="v-name" name="name" autocomplete="name" required>
+          </label>
+          <div class="row">
+            <label for="v-email">Email
+              <input type="email" id="v-email" name="email" autocomplete="email" required>
+            </label>
+            <label for="v-phone">Phone
+              <input type="tel" id="v-phone" name="phone" autocomplete="tel" required>
+            </label>
+          </div>
+          <label for="v-addr">Property address
+            <input id="v-addr" name="address" autocomplete="street-address" required>
+          </label>
+          <div class="row">
+            <label for="v-city">City
+              <input id="v-city" name="city" autocomplete="address-level2" required>
+            </label>
+            <label for="v-type">Asset type
+              <select id="v-type" name="assetType" required>
+                <option>Multifamily</option>
+                <option>Industrial</option>
+                <option>Retail</option>
+                <option>Office</option>
+                <option>Land</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label for="v-size">Units or square feet
+              <input id="v-size" name="size" required>
+            </label>
+            <label for="v-year">Year built, optional
+              <input id="v-year" name="yearBuilt" inputmode="numeric" autocomplete="off">
+            </label>
+          </div>
+          <label for="v-occ">Occupancy, optional
+            <input id="v-occ" name="occupancy" autocomplete="off">
+          </label>
+          <div class="row">
+            <label for="v-time">Timeline to sell
+              <span class="confirm">[CONFIRM: timeline choices]</span>
+              <select id="v-time" name="timeline" required>
+                <option>Not sure yet</option>
+                <option>Within 6 months</option>
+                <option>6 to 12 months</option>
+                <option>More than a year</option>
+              </select>
+            </label>
+            <label for="v-reason">Reason for valuation
+              <select id="v-reason" name="reason" required>
+                <option>Considering a sale</option>
+                <option>Refinance</option>
+                <option>Estate or planning</option>
+                <option>Curiosity</option>
+              </select>
+            </label>
+          </div>
+          <label for="v-notes">Notes
+            <textarea id="v-notes" name="notes" required></textarea>
+          </label>
+          <label class="consent" for="v-consent">
+            <input type="checkbox" id="v-consent" name="consent" required>
+            <span>I agree to be contacted by Parlato Real Estate about this valuation request.</span>
+          </label>
+          <div>
+            <button class="btn solid" type="submit">Send request <span class="arrow" aria-hidden="true"></span></button>
+          </div>
+          <p class="preview-note static" id="formPreview">Preview only, not connected. This form is not linked to an inbox yet. Nothing will be sent.</p>
+          <p class="form-msg" hidden id="formMsg" tabindex="-1"></p>
+        </form>
+      </div>
+    </section>
+
+</main>
+<footer class="foot">
+    <div class="wrap">
+      <div class="foot-brand">
+        <img src="images/logo-15a-name-only-white.png" alt="Parlato" width="520" height="135">
+        <p class="foot-line">Advisors to owners of Indiana real estate.</p>
+      </div>
+      <div class="foot-top">
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <a class="foot-worth" href="valuation.html">What's my property worth?</a>
+      </div>
+      <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
+      <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
+    </div>
+  </footer>
+  <div class="cta-bar" role="region" aria-label="Quick actions">
+    <a class="btn" href="contact.html">Contact</a>
+    <a class="btn solid" href="valuation.html">What's my property worth?</a>
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

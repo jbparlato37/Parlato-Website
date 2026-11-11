@@ -6,13 +6,13 @@ These rules come from the Parlato Real Estate Brand Guidelines dated Nov 9, 2026
 
 ## Brand separation
 
-Parlato and Verti are separate brands. Never mix their logos, colors, fonts, templates, or files on one deliverable.
+Parlato Real Estate is a separate brand from Justin's current brokerage. Never mix that firm's logos, colors, fonts, templates, files, or text into a Parlato deliverable, and do not name that firm in this repo, including comments, docs, and commit messages.
 
-Verti CRE (verticre.com) is a layout inspiration only, along with INV Development. You may follow a quiet, full-width band layout with generous white space and thin rules. You must never copy Verti's logo, colors, fonts, or text.
+Layout direction only: a quiet, full-width band layout with generous white space and thin rules. Use Parlato colors, fonts, and copy only.
 
-Do not reference, link to, or integrate systems of Justin's current brokerage, including Verti, Buildout, ZoomInfo, Rethink, RingCentral, Microsoft Teams, and the firm's Crexi Pro. Do not mention those systems on the site or in commit messages that would publish them.
+Do not reference, link to, or integrate the current brokerage's systems (its listing, CRM, data, phone, chat, and marketplace tools). Do not name those systems on the site, in docs, or in commit messages.
 
-The Nov 9 draft included three Verti CRE press items. They were removed from this preview for the reasons above. Do not add them back unless Joseph explicitly decides otherwise.
+Press items about another firm were removed from an earlier draft. Do not add them back unless Joseph explicitly decides otherwise. Press on this site must be about Parlato Real Estate and approved.
 
 ## Palette
 
@@ -86,6 +86,7 @@ Do not:
 - Present placeholders or illustrations as real deals.
 - Use em dashes or en dashes in copy, titles, meta, or alt text. Use a comma, a period, or a hyphenated compound instead.
 - Use the internal idea "new money at the old money table" as a tagline or in public copy.
+- Advertise or imply off-market sales, pocket listings, private or quiet sales, pre-marketing to a private buyer list, or finding a buyer before a listing is public. A signup may invite people to get notified of new offerings, with no off-market implication.
 
 Example headline from the guide: "Advisors to owners of Indiana real estate."
 
@@ -103,7 +104,7 @@ If a fact is unverified, either:
 - Show a visible `[CONFIRM: ...]` placeholder, or
 - Leave a clearly labeled template or empty state (for example the Sold table and the press list).
 
-The Riverbend Commons card is an illustrative sample. Do not present it as a live listing or a real deal. Do not add a sample offering memorandum; Justin decided none is needed.
+Listing, sold, and report placeholders are labeled as placeholders. Do not present them as live listings or real deals.
 
 A current list of flagged claims and placeholders is in `CHANGES.md`. Update that list when you add or resolve one.
 
@@ -146,8 +147,18 @@ A Parlato email address, to replace the personal Gmail, is an open question in t
 
 ## How to work in this repo
 
-- Keep the site static: HTML, CSS, and JS only, deployable to Cloudflare Pages without a build step.
+The site is multiple pages, not one scrolling page. Top navigation, in order: About, Services, Market Reports, Listings, Sold, Contact, then the "What's my property worth?" button. Files: `index.html`, `about.html`, `services.html`, `market-reports.html`, `listings.html`, `sold.html`, `valuation.html`, `contact.html`, `404.html`. `valuation.html` is the owner valuation form, linked from every "What's my property worth?" button. It is also in the footer.
+
+The home page carries the search positioning: title tag "Indianapolis Multifamily and Commercial Real Estate Broker | Parlato", H1 "Multifamily and commercial brokerage for Indianapolis owners.", the FAQ, and the JSON-LD. The FAQ text is mirrored in the FAQPage JSON-LD and in `llms.txt`. Edit all three together. The service-area county list drives the FAQ answer, JSON-LD `areaServed`, and `llms.txt`.
+
+`about.html` is a founder layout: portrait beside the name, a role line, credential rows, then placeholder blocks. Do not fill those blocks with invented biography.
+
+Listings live in `data/listings.json` (shown on a Leaflet map with cards). Closed deals go in the table on `sold.html`, and in `data/sold.json` when they have map coordinates. See README for how to add a listing. Do not invent deals. Visible placeholders must say "Placeholder" or [CONFIRM] and name no real or invented property. The phone number is small text on the contact page and in the footer only. There is no large phone button.
+
+No sample offering memorandum anywhere on the site. Justin decided none is needed.
+
+- Keep the site static: HTML, CSS, and JS only, deployable to Cloudflare Pages without a build step. Forms are preview only and post nowhere. An email endpoint draft (Cloudflare Pages Functions) exists only on the unmerged `cursor/multipage-site-f9be` branch. Do not add a live endpoint until Joseph approves the connection.
 - Preview with `python3 -m http.server` from the repo root.
-- Do not commit secrets, live form endpoints, or files from Verti or other firm systems.
+- Do not commit secrets, live form endpoints, or files from other firms or their systems.
 - Put design and copy decisions that need Joseph's review in `CHANGES.md`.
 - The GitHub repo is `jbparlato37/Parlato-Website` (private, default branch `main`). Open a pull request for review against this guide rather than editing the main branch in the dark.
