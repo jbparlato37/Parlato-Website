@@ -10,7 +10,7 @@ Position Parlato Real Estate and Justin Parlato in web search and in AI assistan
 
 - All copy was rewritten to be answer-first and specific: who the firm is, what it does, for whom, and where. The old wording is in git history.
 - Title tag is now "Indianapolis Multifamily and Commercial Real Estate Broker | Parlato". The H1 is "Multifamily and commercial brokerage for Indianapolis owners." The brand-guide example headline "Advisors to owners of Indiana real estate" carried no service or city term. The guide line "Straight numbers, institutional marketing, and a founder on every deal" stays in the hero.
-- New FAQ section with nine questions owners ask, mirrored in FAQPage JSON-LD and in `llms.txt`. Edit all three together.
+- New FAQ section with ten questions owners ask, mirrored in FAQPage JSON-LD and in `llms.txt`. Edit all three together.
 - New "Property types and markets" section naming four property types and nine counties with their cities.
 - JSON-LD expanded: description, service catalog, county-level areaServed, founder description, FAQPage.
 - New `llms.txt` (plain-text summary for AI assistants) and `robots.txt` (allows all crawlers).
@@ -21,6 +21,10 @@ Position Parlato Real Estate and Justin Parlato in web search and in AI assistan
 - New metrics band under "The firm" with visible placeholders. "00" is not a figure.
 - Testimonials template added as an HTML comment only.
 - Property type on the form no longer defaults to Multifamily. The buy box prompt now asks for return target and cash or financed.
+
+## Positioning against the institutional multifamily teams (added Nov 11, 2026)
+
+Justin named CBRE (George Tikijian), Walker & Dunlop (Steve LaMotte) and Marcus & Millichap (The Kuroiwa Group) as the long-term competition. Their pages lead with career volume and large communities, and none explains method, process or pricing to a private owner. The site therefore competes on method and founder access now, sets no deal-size ceiling in the copy, and keeps hidden templates for the proof those teams show: a metrics band, a closed-deal list, clients represented and a market report. A tenth FAQ, "What size properties do you work on?", was added.
 
 ## Copy decisions to confirm
 
