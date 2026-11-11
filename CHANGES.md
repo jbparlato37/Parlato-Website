@@ -65,7 +65,7 @@ The new draft is the base for content and structure. Useful pieces from the earl
 - Added a Call CTA (`tel:317-981-9115`) next to Request a Valuation in the header, hero, process, founder section, and a sticky mobile bar.
 - The lead form and the e-blast signup show a visible "Preview only, not connected" notice. Submit still does not send data. HTML comments describe the monday WorkForms or webhook swap-in. Consent checkboxes were added. Phone and email in the contact block are now links.
 - The market-report "Download PDF" button was removed because the linked file is not in the repo and the draft already said the first edition is coming soon. The e-blast signup remains the way to request the report. Generic LinkedIn, Instagram, Facebook, and X homepage links were removed and marked [CONFIRM] until real profile URLs are supplied.
-- Three Verti CRE press items from the draft were removed from the visible page and replaced with an empty template. See "Decisions for Joseph" below.
+- Three press items from the draft, all about another firm, were removed from the visible page and replaced with an empty template. See "Decisions for Joseph" below.
 - Riverbend Commons stays in the listings grid as a clearly labeled illustrative sample. The Sold table, LinkedIn posts, and press list stay as empty templates. No deals, testimonials, or statistics were invented.
 
 ## Brand-guide changes from October 27 to November 9 that mattered
@@ -126,7 +126,7 @@ No track record counts, testimonials, or dollar figures were invented. The River
 
 These are points where the new draft conflicts with the Nov 9 brand guide, or with standing team rules, and a call is needed.
 
-1. Verti press on a Parlato site. The draft listed three Verti CRE articles, including one that names Justin. The brand guide says Parlato and Verti are separate brands and must not share a deliverable. Standing rules also say Verti systems and branding must not be referenced on this project. The items were removed and replaced with an empty press template. If Joseph wants press on the site, it should be Parlato-specific coverage he has approved.
+1. Press about another firm. The draft listed three articles about another firm, including one that names Justin. The brand guide says Parlato must not share a deliverable with another brand, and standing rules say other firms' systems and branding must not be referenced on this project. The items were removed and replaced with an empty press template. If Joseph wants press on the site, it should be Parlato-specific coverage he has approved.
 2. Market report download. The draft offered "Download PDF" and "Free to download, no email required," and also said "First edition coming soon," with a file name that is not in the repo. The download button is out until a real report exists. Confirm whether the ungated-PDF policy should stay in the copy the way it is now.
 3. Generic social URLs. The draft linked LinkedIn, Instagram, Facebook, and X to each network's homepage, not to a Parlato or Justin profile. Those links were removed rather than pointed at the wrong destination.
 4. Personal Gmail on the site. The guide leaves a Parlato email as an open question. The Gmail address is still shown, with a visible confirm flag.
@@ -144,7 +144,7 @@ These are points where the new draft conflicts with the Nov 9 brand guide, or wi
 
 ## Design direction
 
-Graphic design and layout follow the Nov 9 reference-sites note: Verti CRE and INV Development for structure and restraint, Semler CRE and Xmark Midwest for content and logic, with a brokerage focus for now. Parlato fonts and colors only. Patterns kept from the new draft include the four-path "How can we help" routing, listings and an empty Sold table on the homepage, founder bio, and a market-insights section that now signs people up for the e-blast.
+Graphic design and layout follow the Nov 9 reference-sites note: full-width bands and institutional restraint for structure, Semler CRE and Xmark Midwest for content and logic, with a brokerage focus for now. Parlato fonts and colors only. Patterns kept from the new draft include the four-path "How can we help" routing, listings and an empty Sold table on the homepage, founder bio, and a market-insights section that now signs people up for the e-blast.
 
 ## Lighthouse scores
 
