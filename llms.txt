@@ -13,6 +13,13 @@ Parlato Real Estate is a commercial real estate brokerage in Fishers, Indiana, f
 - Tenant representation: Site search and lease negotiation that puts you on equal footing with the landlord.
 - Landlord leasing: Marketing vacant space, qualifying prospects and negotiating leases at market rent.
 
+## Pages
+
+- Home (index.html): services, property types and service area, process, the founder, FAQ and contact.
+- Listings (listings.html): current multifamily and commercial properties for sale or lease. No public listings at the moment.
+- Sold (sold.html): closed transactions with property, size, market, price where the client allows, closing date and side represented. None published yet.
+- Market reports (market-reports.html): Central Indiana sales, pricing and rents by submarket, each with date, data source and author. The first edition is in progress.
+
 ## Property types
 
 - Multifamily (apartment buildings and communities)

@@ -163,3 +163,16 @@ The SEO deduction is the intentional `noindex, nofollow` robots tag, which Light
 ## Sample offering memorandum removed, 11.11.2026
 
 Justin decided no sample offering memorandum is needed. The image and its "Sample work" panel were removed from the Insights section, and `images/sample-om.jpg` was deleted. The market report panel now spans the section. If marketing quality needs proof later, use a page from a real Parlato offering memorandum the client has approved.
+
+## Listings, Sold and Market Reports pages, 11.11.2026
+
+Justin asked for current listings, sold and market reports pages.
+
+- New `listings.html`, `sold.html` and `market-reports.html`, each with its own title, description and `noindex, nofollow`. They share the home page header, footer, fonts and colors.
+- All three are honest empty states. No sample or invented listing, deal or report. Templates for a listing card, a sold row and a report entry are in HTML comments on each page.
+- Header nav is now Services, Listings, Sold, Market Reports, About, FAQ. Markets and Buyers moved to the footer only. The phone menu now starts at 1140 px instead of 960 px so the longer nav does not wrap on laptops.
+- Home page: "Current Listings" button in the Buyers band, "All Market Reports" button in the Insights panel.
+- `llms.txt` lists the pages.
+- [CONFIRM: whether deals Justin worked before founding Parlato may appear on the Sold page, or need his current broker's approval.]
+- Each market report should be its own dated page under `reports/` with source and author.
+
