@@ -32,7 +32,7 @@
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html" aria-current="page">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html" aria-current="page">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
       </nav>
     </div>
   </header>
@@ -52,25 +52,14 @@
     <section class="band" aria-labelledby="rep-h">
       <div class="wrap">
         <div class="head">
-          <h2 id="rep-h">Reports.</h2>
-          <p class="lede">Each report states its date, data source and author.</p>
+          <h2 id="rep-h">The first edition is in progress.</h2>
+          <p class="lede">Each report will state its date, data source and author. Subscribe to get it when it is published.</p>
         </div>
         <!--
-          REPORT LIST. Publish each report as its own page, for example reports/2027-q1-central-indiana-multifamily.html,
-          with a date, the data source, the author and a short method note. Original local data is what search engines
-          and AI assistants cite. Never publish figures that are not sourced. Newest first. Replace the placeholder entry.
-          Entry template:
-          <li><a class="entry" href="reports/FILE.html"><span class="d">Q1 2027</span><h3>Report title</h3><p>One line on what the report covers.</p></a></li>
+          REPORT LIST. Hidden until data/reports.json has entries. Publish each report as its own page under reports/,
+          with a date, the data source, the author and a short method note. Never publish figures that are not sourced.
         -->
-        <ul class="report-list">
-          <li>
-            <div class="entry">
-              <span class="d"><span class="confirm">[CONFIRM: publication date]</span></span>
-              <h3>Central Indiana multifamily market report</h3>
-              <p>Placeholder for the first edition. Sales, pricing and rents by submarket, with data source and author. Subscribe below to get it when it is published.</p>
-            </div>
-          </li>
-        </ul>
+        <ul class="report-list" data-render="reports" data-show-when="reports" hidden></ul>
         <!-- LinkedIn posts and press lists stay hidden until there are real items. [CONFIRM: LinkedIn profile or company page URL.] Press must be about Parlato Real Estate and approved. -->
         <form class="subscribe" id="subscribe" novalidate>
           <!-- E-blast signup. [CONFIRM: email platform] and [CONFIRM: cadence]. Not connected in this preview. -->
@@ -103,7 +92,7 @@
         <p class="foot-line">Advisors to owners of Indiana real estate.</p>
       </div>
       <div class="foot-top">
-        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
         <a class="foot-worth" href="valuation.html">What's my property worth?</a>
       </div>
       <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>

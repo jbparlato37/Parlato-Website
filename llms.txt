@@ -18,8 +18,6 @@ Parlato Real Estate is a commercial real estate brokerage in Fishers, Indiana, f
 - Services (services.html): seller representation, Broker Opinion of Value, buyer representation, tenant representation, landlord leasing, and the five-step sale process.
 - About (about.html): Justin Parlato, founder, and the firm.
 - Market Reports (market-reports.html): Central Indiana sales, pricing and rents by submarket, each with date, data source and author. The first edition is in progress.
-- Listings (listings.html): multifamily and commercial properties for sale or lease, with a map. No live listings yet.
-- Sold (sold.html): closed transactions with property, size, market, price where the client allows, closing date and side represented. None published yet.
 - Valuation (valuation.html): request a written Broker Opinion of Value.
 - Contact (contact.html): phone, office address and inquiry form.
 

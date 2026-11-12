@@ -181,6 +181,152 @@
   var subMsg = document.getElementById("subMsg");
   if (sub && subMsg) previewNotice(sub, subMsg, "email");
 
+
+  /* ------------------------------------------------------------------
+     Growth sections. The site grows from the files in data/:
+       sold.json, listings.json, market-sales.json, reports.json, metrics.json, testimonials.json
+     Anything marked data-show-when="KEY" stays hidden until data/KEY.json has real entries.
+     Entries flagged "illustrative" or "placeholder" never count as real. See README, "How the site grows".
+     ------------------------------------------------------------------ */
+  var DATA_CACHE = {};
+  function loadData(key) {
+    if (!DATA_CACHE[key]) {
+      DATA_CACHE[key] = fetch("data/" + key + ".json")
+        .then(function (res) { if (!res.ok) throw new Error("missing"); return res.json(); })
+        .then(function (raw) {
+          var items = Array.isArray(raw) ? raw : (raw && Array.isArray(raw.items) ? raw.items : []);
+          return {
+            meta: Array.isArray(raw) ? {} : (raw || {}),
+            items: items.filter(function (i) { return i && !i.illustrative && !i.placeholder; })
+          };
+        })
+        .catch(function () { return { meta: {}, items: [] }; });
+    }
+    return DATA_CACHE[key];
+  }
+
+  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function fmtMonth(v) {
+    var m = /^(\d{4})-(\d{2})/.exec(v || "");
+    return m ? MONTHS[parseInt(m[2], 10) - 1] + " " + m[1] : (v || "");
+  }
+  function fmtMoney(v) {
+    if (typeof v !== "number") return v || "Confidential";
+    if (v >= 1e9) return "$" + (v / 1e9).toFixed(2).replace(/\.?0+$/, "") + "B";
+    if (v >= 1e6) return "$" + (v / 1e6).toFixed(2).replace(/0$/, "") + "M";
+    return "$" + Math.round(v).toLocaleString("en-US");
+  }
+  function fmtSize(item) {
+    if (item.size) return item.size;
+    if (typeof item.units === "number") return item.units.toLocaleString("en-US") + " units";
+    if (typeof item.sf === "number") return item.sf.toLocaleString("en-US") + " SF";
+    return "";
+  }
+  function perUnit(item) {
+    if (typeof item.price !== "number") return "";
+    if (typeof item.units === "number" && item.units > 0) return "$" + Math.round(item.price / item.units).toLocaleString("en-US") + " per unit";
+    if (typeof item.sf === "number" && item.sf > 0) return "$" + Math.round(item.price / item.sf).toLocaleString("en-US") + " per SF";
+    return "";
+  }
+  function byNewest(a, b) { return String(b.closed || "").localeCompare(String(a.closed || "")); }
+
+  function table(el, heads, rows, emptyCopy) {
+    if (!rows.length) {
+      el.innerHTML = emptyCopy ? '<table><tbody><tr class="none"><td>' + esc(emptyCopy) + "</td></tr></tbody></table>" : "";
+      return;
+    }
+    el.innerHTML = "<table><thead><tr>" + heads.map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") +
+      "</tr></thead><tbody>" + rows.map(function (r) {
+        return "<tr>" + r.map(function (c) { return "<td>" + esc(c) + "</td>"; }).join("") + "</tr>";
+      }).join("") + "</tbody></table>";
+  }
+
+  var RENDER = {
+    "sold-table": function (el) {
+      loadData("sold").then(function (d) {
+        var items = d.items.slice().sort(byNewest);
+        var limit = parseInt(el.getAttribute("data-limit") || "0", 10);
+        if (limit) items = items.slice(0, limit);
+        table(el, ["Property", "Type", "Size", "Market", "Price", "Closed", "Represented"], items.map(function (i) {
+          return [i.name, i.type, fmtSize(i), i.market, fmtMoney(i.price), fmtMonth(i.closed), i.represented];
+        }), el.getAttribute("data-empty"));
+      });
+    },
+    "sold-totals": function (el) {
+      loadData("sold").then(function (d) {
+        if (d.items.length < 3) return;
+        var units = 0, volume = 0;
+        d.items.forEach(function (i) {
+          if (typeof i.units === "number") units += i.units;
+          if (typeof i.price === "number") volume += i.price;
+        });
+        var cells = [[String(d.items.length), "Closed transactions"]];
+        if (units) cells.push([units.toLocaleString("en-US"), "Units sold"]);
+        if (volume) cells.push([fmtMoney(volume), "Sales volume, disclosed prices"]);
+        el.innerHTML = cells.map(function (c) { return "<div><dd>" + esc(c[0]) + "</dd><dt>" + esc(c[1]) + "</dt></div>"; }).join("");
+        el.hidden = false;
+      });
+    },
+    "market-sales-table": function (el) {
+      loadData("market-sales").then(function (d) {
+        var items = d.items.slice().sort(byNewest);
+        table(el, ["Property", "Type", "Size", "Market", "Price", "Per unit or SF", "Closed"], items.map(function (i) {
+          return [i.name, i.type, fmtSize(i), i.market, fmtMoney(i.price), perUnit(i), fmtMonth(i.closed)];
+        }), el.getAttribute("data-empty"));
+      });
+    },
+    "market-sales-meta": function (el) {
+      loadData("market-sales").then(function (d) {
+        var parts = [];
+        if (d.meta.source) parts.push("Source: " + d.meta.source + ".");
+        if (d.meta.updated) parts.push("Updated " + d.meta.updated + ".");
+        el.textContent = parts.join(" ");
+        el.hidden = !parts.length;
+      });
+    },
+    reports: function (el) {
+      loadData("reports").then(function (d) {
+        el.innerHTML = d.items.map(function (r) {
+          return '<li><a class="entry" href="' + esc(r.url) + '"><span class="d">' + esc(r.date) + "</span><h3>" +
+            esc(r.title) + "</h3><p>" + esc(r.summary) + "</p></a></li>";
+        }).join("");
+        if (d.items.length) {
+          var h = document.getElementById("rep-h");
+          if (h) {
+            h.textContent = "Reports.";
+            var lede = h.parentNode.querySelector(".lede");
+            if (lede) lede.textContent = "Each report states its date, data source and author.";
+          }
+        }
+      });
+    },
+    metrics: function (el) {
+      loadData("metrics").then(function (d) {
+        el.innerHTML = d.items.map(function (m) {
+          return "<div><dd>" + esc(m.value) + "</dd><dt>" + esc(m.label) + "</dt></div>";
+        }).join("");
+      });
+    },
+    testimonials: function (el) {
+      loadData("testimonials").then(function (d) {
+        el.innerHTML = d.items.map(function (t) {
+          return '<figure class="quote"><blockquote><p>' + esc(t.quote) + "</p></blockquote><figcaption><b>" + esc(t.name) +
+            "</b>" + esc([t.title, t.company].filter(Boolean).join(", ")) +
+            (t.deal ? '<span class="deal">' + esc(t.deal) + "</span>" : "") + "</figcaption></figure>";
+        }).join("");
+      });
+    }
+  };
+  document.querySelectorAll("[data-render]").forEach(function (el) {
+    var fn = RENDER[el.getAttribute("data-render")];
+    if (fn) fn(el);
+  });
+  document.querySelectorAll("[data-show-when]").forEach(function (el) {
+    loadData(el.getAttribute("data-show-when")).then(function (d) {
+      if (d.items.length) el.hidden = false;
+    });
+  });
+
   var market = document.getElementById("market");
   if (market) initMarket(market);
 
@@ -207,6 +353,15 @@
       })
       .then(function (items) {
         if (!Array.isArray(items)) throw new Error("bad");
+        items = items.filter(function (i) { return i && !i.illustrative && !i.placeholder; });
+        if (!items.length && mode === "listings") {
+          root.innerHTML = "";
+          var none = document.createElement("p");
+          none.className = "lede";
+          none.textContent = emptyCopy;
+          root.appendChild(none);
+          return;
+        }
         renderMarket(root, items, mode, emptyCopy);
       })
       .catch(function () {

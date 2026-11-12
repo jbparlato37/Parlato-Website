@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Recent Multifamily and Commercial Sales, Central Indiana | Parlato</title>
+  <meta name="description" content="Recent multifamily and commercial property sales in Indianapolis and Central Indiana, tracked from public records by Parlato Real Estate.">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- [CONFIRM DOMAIN] Remove noindex and add an absolute canonical URL and Open Graph URL tags only after publication is approved. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Parlato Real Estate">
+  <meta property="og:title" content="Recent Multifamily and Commercial Sales, Central Indiana | Parlato">
+  <meta property="og:description" content="Recent multifamily and commercial property sales in Indianapolis and Central Indiana, tracked from public records by Parlato Real Estate.">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="fonts/libre-franklin-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bodoni-moda-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+  <div class="review-banner">
+    <div class="wrap">Review preview. Not for publication. Items marked [CONFIRM] need review before launch.</div>
+  </div>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Parlato Real Estate home">
+        <span class="logo-plate">
+          <img src="images/logo-15a-black.png" alt="Parlato Real Estate" width="640" height="250">
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" aria-current="page" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html" data-show-when="sold" hidden>Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
+      </nav>
+    </div>
+  </header>
+<main id="main">
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Market Sales</p>
+        <h1>Recent Central Indiana sales.</h1>
+        <p class="lede">Multifamily and commercial sales across Indianapolis and Central Indiana, tracked by Parlato Real Estate from public records. These are market transactions, not Parlato Real Estate deals.</p>
+      </div>
+    </section>
+    <section class="band" aria-labelledby="ms-h">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="ms-h">What traded, and at what price.</h2>
+          <p class="lede" data-render="market-sales-meta"></p>
+        </div>
+        <!--
+          Rows come from data/market-sales.json. Every row needs a public source. This page and its menu link
+          appear by themselves once the file has rows. Never present a market sale as a Parlato transaction.
+        -->
+        <div class="tbl" data-render="market-sales-table" data-empty="The first data set is being compiled."></div>
+        <div class="cta-row" style="margin-top:36px">
+          <a class="btn solid" href="valuation.html">What's my property worth? <span class="arrow" aria-hidden="true"></span></a>
+          <a class="btn" href="market-reports.html">Market reports</a>
+        </div>
+      </div>
+    </section>
+
+</main>
+<footer class="foot">
+    <div class="wrap">
+      <div class="foot-brand">
+        <img src="images/logo-15a-name-only-white.png" alt="Parlato" width="520" height="135">
+        <p class="foot-line">Advisors to owners of Indiana real estate.</p>
+      </div>
+      <div class="foot-top">
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <a class="foot-worth" href="valuation.html">What's my property worth?</a>
+      </div>
+      <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
+      <small>[CONFIRM: sponsoring broker company name and Indiana license disclosure, to be added before launch.] Justin Parlato, Indiana Managing Broker, License [CONFIRM: license number]. Information is deemed reliable but not guaranteed. © 2026 Parlato Real Estate.</small>
+    </div>
+  </footer>
+  <div class="cta-bar" role="region" aria-label="Quick actions">
+    <a class="btn" href="contact.html">Contact</a>
+    <a class="btn solid" href="valuation.html">What's my property worth?</a>
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

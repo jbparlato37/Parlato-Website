@@ -295,7 +295,7 @@
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
       </nav>
     </div>
   </header>
@@ -465,6 +465,32 @@
       </div>
     </section>
 
+    <!--
+      GROWTH SECTIONS. Each one stays hidden until its data file has real entries, then appears by itself.
+      Recent closings: data/sold.json. Testimonials: data/testimonials.json. See README, "How the site grows".
+    -->
+    <section class="band" id="recent-closings" aria-labelledby="closings-h" data-show-when="sold" hidden>
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Recent closings</p>
+          <h2 id="closings-h">On the record.</h2>
+        </div>
+        <div class="tbl" data-render="sold-table" data-limit="3"></div>
+        <div class="cta-row" style="margin-top:32px">
+          <a class="btn" href="sold.html">All closed transactions</a>
+        </div>
+      </div>
+    </section>
+    <section class="band stone" id="testimonials" aria-labelledby="quotes-h" data-show-when="testimonials" hidden>
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Clients</p>
+          <h2 id="quotes-h">What owners say.</h2>
+        </div>
+        <div class="quotes" data-render="testimonials"></div>
+      </div>
+    </section>
+
     <section class="band" id="faq" aria-labelledby="faq-h">
       <div class="wrap">
         <div class="head">
@@ -537,8 +563,9 @@
           <li><a href="services.html"><span>Services</span> Selling, valuation, buying and leasing, and how a sale works.</a></li>
           <li><a href="about.html"><span>About</span> Justin Parlato and the firm.</a></li>
           <li><a href="market-reports.html"><span>Market Reports</span> Central Indiana sales, pricing and rents.</a></li>
-          <li><a href="listings.html"><span>Listings</span> Properties for sale or lease.</a></li>
-          <li><a href="sold.html"><span>Sold</span> Closed transactions.</a></li>
+          <li data-show-when="market-sales" hidden><a href="market-sales.html"><span>Market Sales</span> Recent Central Indiana sales, from public records.</a></li>
+          <li data-show-when="listings" hidden><a href="listings.html"><span>Listings</span> Properties for sale or lease.</a></li>
+          <li data-show-when="sold" hidden><a href="sold.html"><span>Sold</span> Closed transactions.</a></li>
           <li><a href="contact.html"><span>Contact</span> Call or write to Justin.</a></li>
         </ul>
       </div>
@@ -552,7 +579,7 @@
         <p class="foot-line">Advisors to owners of Indiana real estate.</p>
       </div>
       <div class="foot-top">
-        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
         <a class="foot-worth" href="valuation.html">What's my property worth?</a>
       </div>
       <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>

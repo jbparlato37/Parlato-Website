@@ -275,7 +275,7 @@ p { margin: 0; }
   width: auto;
   display: block;
 }
-.nav { display: flex; align-items: center; gap: 22px; }
+.nav { display: flex; align-items: center; gap: 14px; }
 .nav a {
   font-size: 0.78rem;
   font-weight: 600;
@@ -297,7 +297,7 @@ p { margin: 0; }
   cursor: pointer;
   color: var(--black);
 }
-@media (max-width: 960px) {
+@media (max-width: 1279px) {
   .nav-toggle { display: block; background: transparent; color: var(--black); border-color: var(--black); }
   .nav {
     display: none;
@@ -1627,3 +1627,17 @@ html.js .reveal.in { opacity: 1; transform: none; transition: opacity 0.6s ease,
 
 /* Only the preview notice carries the gold rule; submit messages use rule grey (one gold element per view). */
 .sub-msg, .form-msg { border-left-color: var(--rule); }
+
+/* Growth sections: hidden until their data file has real entries (see js/main.js). */
+[hidden] { display: none !important; }
+.tbl .none td { font-family: var(--sans); }
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.quote { margin: 0; padding: 28px 0 0; border-top: 1px solid var(--black); display: grid; gap: 18px; align-content: start; }
+.quote blockquote { margin: 0; font-family: var(--display); font-size: 1.3rem; line-height: 1.35; }
+.quote figcaption { font-size: 0.9rem; display: grid; gap: 4px; color: var(--black); }
+.quote .deal { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+@media (max-width: 900px) { .quotes { grid-template-columns: 1fr; } }
+.nav a { white-space: nowrap; }
+.nav a { font-size: 0.74rem; letter-spacing: 0.12em; }
+.nav .btn { padding: 12px 14px; }
+.metrics[data-render="sold-totals"] { margin: 0 0 48px; padding-bottom: 28px; }

@@ -104,7 +104,7 @@ If a fact is unverified, either:
 - Show a visible `[CONFIRM: ...]` placeholder, or
 - Leave a clearly labeled template or empty state (for example the Sold table and the press list).
 
-Listing, sold, and report placeholders are labeled as placeholders. Do not present them as live listings or real deals.
+There are no placeholder listings, deals, or reports on the site. Sections for them stay hidden until real entries exist.
 
 A current list of flagged claims and placeholders is in `CHANGES.md`. Update that list when you add or resolve one.
 
@@ -147,13 +147,15 @@ A Parlato email address, to replace the personal Gmail, is an open question in t
 
 ## How to work in this repo
 
-The site is multiple pages, not one scrolling page. Top navigation, in order: About, Services, Market Reports, Listings, Sold, Contact, then the "What's my property worth?" button. Files: `index.html`, `about.html`, `services.html`, `market-reports.html`, `listings.html`, `sold.html`, `valuation.html`, `contact.html`, `404.html`. `valuation.html` is the owner valuation form, linked from every "What's my property worth?" button. It is also in the footer.
+The site is multiple pages, not one scrolling page. Top navigation, in order: About, Services, Market Reports, Market Sales, Listings, Sold, Contact, then the "What's my property worth?" button. Market Sales, Listings and Sold stay out of the menu until their data file has real entries (see below). Files: `index.html`, `about.html`, `services.html`, `market-reports.html`, `market-sales.html`, `listings.html`, `sold.html`, `valuation.html`, `contact.html`, `404.html`. `valuation.html` is the owner valuation form, linked from every "What's my property worth?" button. It is also in the footer.
 
 The home page carries the search positioning: title tag "Indianapolis Multifamily and Commercial Real Estate Broker | Parlato", H1 "Multifamily and commercial brokerage for Indianapolis owners.", the FAQ, and the JSON-LD. The FAQ text is mirrored in the FAQPage JSON-LD and in `llms.txt`. Edit all three together. The service-area county list drives the FAQ answer, JSON-LD `areaServed`, and `llms.txt`.
 
-`about.html` is a founder layout: portrait beside the name, a role line, credential rows, then placeholder blocks. Do not fill those blocks with invented biography.
+`about.html` is a founder layout: portrait beside the name, a role line, the bio and credential rows. Do not add invented biography.
 
-Listings live in `data/listings.json` (shown on a Leaflet map with cards). Closed deals go in the table on `sold.html`, and in `data/sold.json` when they have map coordinates. See README for how to add a listing. Do not invent deals. Visible placeholders must say "Placeholder" or [CONFIRM] and name no real or invented property. The phone number is small text on the contact page and in the footer only. There is no large phone button.
+Positioning while the track record is short: lead with method, local data, the Broker Opinion of Value and founder access. Never show an empty slot for results. No placeholder deals, "00" metrics, empty tables or "coming soon" lists on a public page.
+
+The site grows from the files in `data/`: `sold.json`, `listings.json`, `market-sales.json`, `reports.json`, `metrics.json`, `testimonials.json`. Anything marked `data-show-when="KEY"` stays hidden until `data/KEY.json` has real entries, then appears by itself. See README, "How the site grows". Do not invent entries. A market sale is never presented as a Parlato transaction and needs a public source. The phone number is small text on the contact page and in the footer only. There is no large phone button.
 
 No sample offering memorandum anywhere on the site. Justin decided none is needed.
 

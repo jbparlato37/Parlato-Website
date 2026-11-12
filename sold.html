@@ -32,7 +32,7 @@
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html" aria-current="page">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
+        <a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html" aria-current="page" data-show-when="sold" hidden>Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
       </nav>
     </div>
   </header>
@@ -51,27 +51,12 @@
           <h2 id="sold-h">On the record.</h2>
         </div>
         <!--
-          Add a row only for a real, closed transaction that Joseph has approved for publication. Replace the placeholder rows.
-          [CONFIRM: whether deals Justin worked before founding Parlato may be listed, or need his current broker's approval.]
-          Newest first. Price only where the client allows; otherwise write "Confidential".
-          When real rows exist, add totals (transactions, units, dollar volume) above the table, and add the same records
-          with coordinates to data/sold.json to show them on a map.
+          Closed deals come from data/sold.json. Add a record only for a real, closed transaction that Joseph has
+          approved for publication. This page, its menu link and the home page "Recent closings" section appear
+          by themselves once the file has an entry. Totals appear at three or more deals.
         -->
-        <p class="tbl-note">Placeholder rows. Not real transactions. <span class="confirm">[CONFIRM: closed deals approved for publication]</span></p>
-        <div class="tbl">
-          <table>
-            <thead>
-              <tr>
-                <th>Property</th><th>Type</th><th>Size</th><th>Market</th><th>Price</th><th>Closed</th><th>Represented</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="placeholder"><td>Property name</td><td>Type</td><td>00 units</td><td>City, County</td><td>$0.00M</td><td>Month 0000</td><td>Seller</td></tr>
-              <tr class="placeholder"><td>Property name</td><td>Type</td><td>00 units</td><td>City, County</td><td>$0.00M</td><td>Month 0000</td><td>Seller</td></tr>
-              <tr class="placeholder"><td>Property name</td><td>Type</td><td>00 units</td><td>City, County</td><td>$0.00M</td><td>Month 0000</td><td>Seller</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <dl class="metrics" data-render="sold-totals" hidden></dl>
+        <div class="tbl" data-render="sold-table" data-empty="No closed transactions are published yet."></div>
       </div>
     </section>
 
@@ -83,7 +68,7 @@
         <p class="foot-line">Advisors to owners of Indiana real estate.</p>
       </div>
       <div class="foot-top">
-        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
         <a class="foot-worth" href="valuation.html">What's my property worth?</a>
       </div>
       <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>

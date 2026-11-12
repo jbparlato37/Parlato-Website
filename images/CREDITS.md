@@ -20,7 +20,7 @@ License for every stock row below: the [Pexels License](https://www.pexels.com/l
 | `images/tile-multifamily-*.webp` | Multifamily balconies. Services hero and tile. | Pexels contributor, photo 2462015 | https://www.pexels.com/photo/2462015/ |
 | `images/tile-warehouse-*.webp` | Industrial warehouse exterior. Services tile. | Robert So | https://www.pexels.com/photo/photo-of-a-warehouse-12171800/ |
 | `images/tile-desk-*.webp` | A hand over printed charts. No client names and no face. Services tile. | Pexels contributor, photo 590022 | https://www.pexels.com/photo/590022/ |
-| `images/tile-suite-*.webp` | Empty office interior. Services tile and the Contact inset. Not the Parlato office. | Bingqian Li | https://www.pexels.com/photo/cozy-empty-office-space-in-afternoon-light-31517321/ |
+| `images/tile-suite-*.webp` | Empty office interior. Services tile. Not the Parlato office. | Bingqian Li | https://www.pexels.com/photo/cozy-empty-office-space-in-afternoon-light-31517321/ |
 | `images/tile-land-*.webp` | Open farmland. Not used on a page at present. | Pexels contributor, photo 440731 | https://www.pexels.com/photo/440731/ |
 
 The founder headshot and logos were already in the project. They are not from Pexels. The headshot stays grayscale, as the Nov 9 guide requires for headshots. The property photographs stay in color.

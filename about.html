@@ -32,7 +32,7 @@
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="about.html" aria-current="page">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
+        <a href="about.html" aria-current="page">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="contact.html">Contact</a><a class="btn solid" href="valuation.html">What's my property worth?</a>
       </nav>
     </div>
   </header>
@@ -69,14 +69,7 @@
               <li><span>Education</span><span>Real Estate and Marketing, Kelley School of Business, IU Indianapolis</span></li>
               <li><span>Focus</span><span>Multifamily and commercial investment sales, Central Indiana</span></li>
             </ul>
-            <div class="placeholder">
-              <p class="eyebrow">How I work with owners</p>
-              <p>[CONFIRM: how Justin works an assignment, in his words.]</p>
-            </div>
-            <div class="placeholder">
-              <p class="eyebrow">Community and affiliations</p>
-              <p>[CONFIRM: board seats, memberships and community involvement.]</p>
-            </div>
+            <!-- Add when Justin supplies them, in his words: how he works an assignment, and community and affiliations. Do not invent biography. -->
             <div class="cta-row">
               <a class="btn solid" href="contact.html">Talk with Justin <span class="arrow" aria-hidden="true"></span></a>
               <a class="btn" href="valuation.html">What's my property worth?</a>
@@ -100,29 +93,11 @@
           </div>
         </div>
         <!--
-          METRICS BAND. Every number here must be real and approved. "00" is a placeholder, not a figure.
-          Reference pattern: the band total should equal what the founder bio can support.
+          METRICS BAND. Hidden until data/metrics.json has entries, then it appears by itself.
+          Every number must be real and approved. The totals should equal what the Sold page can support.
         -->
-        <dl class="metrics">
-          <div>
-            <dd>00</dd>
-            <dt>Years in commercial real estate <span class="confirm">[CONFIRM: number]</span></dt>
-          </div>
-          <div>
-            <dd>00</dd>
-            <dt>Central Indiana sales tracked in-house <span class="confirm">[CONFIRM: number]</span></dt>
-          </div>
-          <div>
-            <dd>9</dd>
-            <dt>Central Indiana counties covered <span class="confirm">[CONFIRM: counties]</span></dt>
-          </div>
-        </dl>
-        <!--
-          TESTIMONIALS TEMPLATE. Hidden until there are real, client-approved quotes. Do not invent testimonials.
-          Format for each: one or two sentences, full name, title, company, and a tag naming the deal type
-          (for example "Seller, 24 units, Indianapolis"). Attributed quotes tied to a deal carry more weight
-          than first-name-only quotes.
-        -->
+        <dl class="metrics" data-render="metrics" data-show-when="metrics" hidden></dl>
+        <!-- Testimonials live in data/testimonials.json and show on the home page once real, client-approved quotes exist. -->
       </div>
     </section>
 
@@ -152,7 +127,7 @@
         <p class="foot-line">Advisors to owners of Indiana real estate.</p>
       </div>
       <div class="foot-top">
-        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="listings.html">Listings</a><a href="sold.html">Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
+        <nav aria-label="Footer"><a href="about.html">About</a><a href="services.html">Services</a><a href="market-reports.html">Market Reports</a><a href="market-sales.html" data-show-when="market-sales" hidden>Market Sales</a><a href="listings.html"None data-show-when="listings" hidden>Listings</a><a href="sold.html"None data-show-when="sold" hidden>Sold</a><a href="valuation.html">Valuation</a><a href="contact.html">Contact</a></nav>
         <a class="foot-worth" href="valuation.html">What's my property worth?</a>
       </div>
       <small>Justin Parlato, Founder · Parlato Real Estate · 12175 Visionary Way, Fishers, IN 46038 · <a href="tel:+13179819115">317-981-9115</a></small>
